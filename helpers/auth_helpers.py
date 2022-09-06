@@ -12,8 +12,8 @@ class AuthHelper(object):
     def __init__(self):
         self.requests_utility = RequestsUtility()
 
-    def login_to_auth_helper(self, client_id=None, client_secret=None, grant_type=None,
-                             otp=None, username=None, password=None, refresh_token=None, u_sub=None):
+    def post_oauth_token_helper(self, client_id=None, client_secret=None, grant_type=None,
+                                otp=None, username=None, password=None, refresh_token=None, u_sub=None):
 
         payload = {
             'client_id': client_id,
@@ -49,10 +49,10 @@ class AuthHelper(object):
         # pdb.set_trace()
         return response
 
-    def create_new_user_helper(self, cell_number=None, name=None, surname=None, email=None, initials=None,
-                               organizational_unit=None, preferred_language=None, uid=None):
+    def post_api_v2_users_json_helper(self, cell_number=None, name=None, surname=None, email=None, initials=None,
+                                      organizational_unit=None, preferred_language=None, uid=None):
         temp = generate_username()
-        auth = self.login_to_auth_helper()['access_token']
+        auth = self.post_oauth_token_helper()['access_token']
         logger.info(f"Generated username :{temp}")
         logger.debug(f"Auth token generated{auth}")
         # create payload
