@@ -19,7 +19,7 @@ PLATENUMBER = 'LUN' + change
 
 
 def generate_username():
-    email = INT_HOST[os.environ.get('ENV', 'email')]
+    email = INT_HOST[os.environ.get('ENV', 'mail')]
     logger.debug("Generating random username")
     faker = Faker()
     name = faker.first_name() + "Test"

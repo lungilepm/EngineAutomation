@@ -5,8 +5,12 @@ import json
 from configs.hosts_config import INT_HOST
 import logging as logger
 
+
 class RequestsUtility(object):
     def __init__(self):
+        self.rs_json = None
+        self.expected_status_code = None
+        self.url = None
         self.status_code = None
         self.env = os.environ.get('ENV', 'intzw')
         self.base_url = INT_HOST[self.env]
@@ -17,15 +21,15 @@ class RequestsUtility(object):
             f"Expected status code {self.expected_status_code} but actual {self.status_code}\n" \
             f"Response Json: {self.rs_json}"
 
-    def get(self, endpoint, payload=None, expected_status_code=200, auth=None):
+    def get(self, endpoint, payload=None, expected_status_code=200, headers=None, auth=None):
 
-        if not auth:
+        if not headers:
             headers = {"Content-Type": "application/json",
                        "Accept": "*/*",
                        'compress_token': 'true'
                        }
         else:
-            auth
+
             headers = {
                 'Authorization': 'Bearer {}'.format(auth),
                 'Content-Type': 'application/json',
@@ -47,22 +51,15 @@ class RequestsUtility(object):
         logger.debug(f"return payload for get '{endpoint}'\n{self.rs_json}")
         return self.rs_json
 
-    def post(self, endpoint, payload=None, expected_status_code=200, auth=None):
+    def post(self, endpoint, payload=None, expected_status_code=200, headers=None, auth=None):
 
-        if not auth:
+        if not headers:
             headers = {"Content-Type": "application/json",
                        "Accept": "*/*",
                        'compress_token': 'true'
                        }
-        else:
-            auth
-            headers = {
-                'Authorization': 'Bearer {}'.format(auth),
-                'Content-Type': 'application/json',
-                'compress_token': 'true'
 
-            }
-            logger.debug(f"get auth token for '{endpoint}' and authorisation {auth}")
+        logger.debug(f"get auth token for '{endpoint}'")
 
         self.url = self.base_url + endpoint
 

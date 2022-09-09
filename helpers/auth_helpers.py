@@ -1,9 +1,6 @@
 import os
-
-from configs.hosts_config import USER_INFO, INT_HOST
-
 import logging as logger
-
+from configs.hosts_config import INT_HOST
 from utilities.genericUtilities import generate_username
 from utilities.requestsUtility import RequestsUtility
 
@@ -12,81 +9,150 @@ class AuthHelper(object):
     def __init__(self):
         self.requests_utility = RequestsUtility()
 
-    def post_oauth_token_helper(self, client_id=None, client_secret=None, grant_type=None,
-                                otp=None, username=None, password=None, refresh_token=None, u_sub=None):
+    def post_iceauth_oauth_token_helper(self, uSub=None, otp=None, refresh_token=None, password=None, username=None,
+                                        grant_type=None, client_secret=None, client_id=None):
 
+        # The headers of the request
+        headers = {'compress_token': 'true', 'content-type': 'application/json', 'accept': '*/*'}
+
+        # The request payload of post_iceauth_oauth_token_helper
         payload = {
-            'client_id': client_id,
-            'client_secret': client_secret,
-            'grant_type': grant_type,
-            'username': username,
-            'password': password,
-            'refresh_token': refresh_token,
+            'uSub': uSub,
             'otp': otp,
-            'uSub': u_sub
-        }
+            'refresh_token': refresh_token,
+            'password': password,
+            'username': username,
+            'grant_type': grant_type,
+            'client_secret': client_secret,
+            'client_id': client_id}
 
-        if not client_id:
-            payload['client_id'] = USER_INFO[os.environ.get('ENV', 'client_id')]
+        # Default values to be used
+        # if not uSub:
+        #     payload['uSub'] = INT_HOST[os.environ.get('ENV', 'uSub')]
 
-        if not client_secret:
-            payload['client_secret'] = USER_INFO[os.environ.get('ENV', 'client_secret')]
+        # if not otp:
+        #     payload['otp'] = INT_HOST[os.environ.get('ENV', 'otp')]
 
-        if not grant_type:
-            payload['grant_type'] = USER_INFO[os.environ.get('ENV', 'grant_type')]
-
-        if not username:
-            payload['username'] = INT_HOST[os.environ.get('ENV', 'username')]
+        if not refresh_token:
+            payload['refresh_token'] = INT_HOST[os.environ.get('ENV', 'refresh_token')]
 
         if not password:
             payload['password'] = INT_HOST[os.environ.get('ENV', 'password')]
 
-        if not u_sub:
-            payload['uSub'] = USER_INFO[os.environ.get('ENV', 'uSub')]
-        logger.info(f"/ICEAUTH/oauth/token payload :{payload}")
-        response = self.requests_utility.post('ICEAUTH/oauth/token', payload=payload)
-        # import pdb
-        # pdb.set_trace()
+        if not username:
+            payload['username'] = INT_HOST[os.environ.get('ENV', 'username')]
+
+        if not grant_type:
+            payload['grant_type'] = INT_HOST[os.environ.get('ENV', 'grant_type')]
+
+        if not client_secret:
+            payload['client_secret'] = INT_HOST[os.environ.get('ENV', 'client_secret')]
+
+        if not client_id:
+            payload['client_id'] = INT_HOST[os.environ.get('ENV', 'client_id')]
+
+        logger.info(f"Helper function for iceauth/oauth/token payload :{payload}")
+        response = self.requests_utility.post('iceauth/oauth/token', payload=payload, headers=headers)
         return response
 
-    def post_api_v2_users_json_helper(self, cell_number=None, name=None, surname=None, email=None, initials=None,
-                                      organizational_unit=None, preferred_language=None, uid=None):
+    def post_iceauth_api_v2_users_json_helper(self, userMetaData=None, uid=None, surname=None, preferredLanguage=None,
+                                              organizationalUnit=None, mail=None, initials=None, givenName=None,
+                                              commonName=None, cellN=None):
         temp = generate_username()
-        auth = self.post_oauth_token_helper()['access_token']
-        logger.info(f"Generated username :{temp}")
-        logger.debug(f"Auth token generated{auth}")
-        # create payload
-        payload = {
-            'cellN': cell_number,
-            'commonName': name,
-            'givenName': name,
-            'initials': initials,
-            'mail': email,
-            'organizationalUnit': organizational_unit,
-            'preferredLanguage': preferred_language,
-            'surname': surname,
-            'uid': uid,
-            'userMetaData': {}
-        }
-        if not cell_number:
-            payload['cellN'] = USER_INFO[os.environ.get('ENV', 'cellN')]
-        if not name:
-            payload['commonName'] = temp['name']
-            payload['givenName'] = temp['name']
-            payload['uid'] = temp['name']
-        if not email:
-            payload['mail'] = temp['email']
-        if not surname:
-            payload['surname'] = temp['surname']
-        if not initials:
-            payload['initials'] = USER_INFO[os.environ.get('ENV', 'initials')]
-        if not organizational_unit:
-            payload['organizationalUnit'] = USER_INFO[os.environ.get('ENV', 'organizationalUnit')]
-        if not preferred_language:
-            payload['preferredLanguage'] = USER_INFO[os.environ.get('ENV', 'preferredLanguage')]
-        if not initials:
-            payload['initials'] = USER_INFO[os.environ.get('ENV', 'initials')]
-        logger.debug(f"The payload of 'test_create_new_user()'  {payload}")
-        response = self.requests_utility.post(endpoint='ICEAUTH/api/v2/users/json', payload=payload, auth=auth)
+        auth = self.post_iceauth_oauth_token_helper()['access_token']
+        bearer_auth = f'Bearer {auth}'
 
+        # The headers of the request
+        headers = {'authorization': bearer_auth, 'compress_token': 'true', 'content-type': 'application/json'}
+
+        # The request payload of post_iceauth_api_v2_users_json_helper
+        payload = {
+            'userMetaData': userMetaData,
+            'uid': uid,
+            'surname': surname,
+            'preferredLanguage': preferredLanguage,
+            'organizationalUnit': organizationalUnit,
+            'mail': mail,
+            'initials': initials,
+            'givenName': givenName,
+            'commonName': commonName,
+            'cellN': cellN}
+
+        # Default values to be used
+        if not userMetaData:
+            payload['userMetaData'] = INT_HOST[os.environ.get('ENV', 'userMetaData')]
+
+        if not uid:
+            payload['uid'] = temp['name']
+
+        if not surname:
+            payload['surname'] = INT_HOST[os.environ.get('ENV', 'surname')]
+
+        if not preferredLanguage:
+            payload['preferredLanguage'] = INT_HOST[os.environ.get('ENV', 'preferredLanguage')]
+
+        if not organizationalUnit:
+            payload['organizationalUnit'] = INT_HOST[os.environ.get('ENV', 'organizationalUnit')]
+
+        if not mail:
+            payload['mail'] = INT_HOST[os.environ.get('ENV', 'mail')]
+
+        if not initials:
+            payload['initials'] = INT_HOST[os.environ.get('ENV', 'initials')]
+
+        if not givenName:
+            payload['givenName'] = temp['name']
+
+        if not commonName:
+            payload['commonName'] = temp['name']
+
+        if not cellN:
+            payload['cellN'] = INT_HOST[os.environ.get('ENV', 'cellN')]
+
+        logger.info(f"Helper function for iceauth/api/v2/users/json payload :{payload}")
+        response = self.requests_utility.post('iceauth/api/v2/users/json', payload=payload, headers=headers, auth=auth)
+        return response
+
+    def get_iceauth_api_v2_users_json_helper(self, uid=None, newPassword=None, currPassword=None):
+        auth = self.post_iceauth_oauth_token_helper()['access_token']
+        bearer_auth = f'Bearer {auth}'
+
+        # The headers of the request
+        headers = {'content-type': 'application/json', 'accept': '*/*', 'authorization': bearer_auth}
+
+        # The request payload of get_iceauth_api_v2_users_json_helper
+        payload = {
+            'uid': uid,
+            'newPassword': newPassword,
+            'currPassword': currPassword}
+
+        # Default values to be used
+        if not uid:
+            payload['uid'] = INT_HOST[os.environ.get('ENV', 'username')]
+
+        # if not newPassword:
+        #     payload['newPassword'] = INT_HOST[os.environ.get('ENV', 'newPassword')]
+        #
+        # if not currPassword:
+        #     payload['currPassword'] = INT_HOST[os.environ.get('ENV', 'currPassword')]
+
+        logger.info(f"Helper function for iceauth/api/v2/users/json payload :{payload}")
+        response = self.requests_utility.get('iceauth/api/v2/users/json', payload=payload, headers=headers, auth=auth)
+        return response
+
+    def get_iceauth_api_realms_helper(self):
+        auth = self.post_iceauth_oauth_token_helper()['access_token']
+        bearer_auth = f'Bearer {auth}'
+
+        # The headers of the request
+        headers = {'accept': '*/*'}
+
+        # The request payload of get_iceauth_api_realms_helper
+        payload = {
+        }
+
+        # Default values to be used
+
+        logger.info(f"Helper function for iceauth/api/realms payload :{payload}")
+        response = self.requests_utility.get('iceauth/api/realms', payload=payload, headers=headers, auth=auth)
         return response

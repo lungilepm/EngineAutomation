@@ -1,0 +1,37 @@
+
+    # def post_iceauth_oauth_token_helper(self, client_id=None, client_secret=None, grant_type=None,
+    #                                     otp=None, username=None, password=None, refresh_token=None, u_sub=None):
+    #     # The headers of the request
+    #     payload = {
+    #         'client_id': client_id,
+    #         'client_secret': client_secret,
+    #         'grant_type': grant_type,
+    #         'username': username,
+    #         'password': password,
+    #         'refresh_token': refresh_token,
+    #         'otp': otp,
+    #         'uSub': u_sub
+    #     }
+    #
+    #     if not client_id:
+    #         payload['client_id'] = INT_HOST[os.environ.get('ENV', 'client_id')]
+    #
+    #     if not client_secret:
+    #         payload['client_secret'] = INT_HOST[os.environ.get('ENV', 'client_secret')]
+    #
+    #     if not grant_type:
+    #         payload['grant_type'] = INT_HOST[os.environ.get('ENV', 'grant_type')]
+    #
+    #     if not username:
+    #         payload['username'] = INT_HOST[os.environ.get('ENV', 'username')]
+    #
+    #     if not password:
+    #         payload['password'] = INT_HOST[os.environ.get('ENV', 'password')]
+    #
+    #     if not u_sub:
+    #         payload['uSub'] = INT_HOST[os.environ.get('ENV', 'uSub')]
+    #     logger.info(f"/ICEAUTH/oauth/token payload :{payload}")
+    #     response = self.requests_utility.post('ICEAUTH/oauth/token', payload=payload)
+    #     # import pdb
+    #     # pdb.set_trace()
+    #     return response
