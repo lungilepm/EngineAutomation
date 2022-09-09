@@ -156,3 +156,46 @@ class AuthHelper(object):
         logger.info(f"Helper function for iceauth/api/realms payload :{payload}")
         response = self.requests_utility.get('iceauth/api/realms', payload=payload, headers=headers, auth=auth)
         return response
+
+    def post_iceauth_oauth_token_helper_2(self, password=None, username=None, client_secret=None, client_id=None,
+                                        grant_type=None):
+        auth = self.post_iceauth_oauth_token_helper()['access_token']
+        bearer_auth = f'Bearer {auth}'
+
+        # The headers of the request
+        headers = {'compress_token': 'true', 'accept': 'application/json',
+                   'content-type': 'application/x-www-form-urlencoded', 'origin': 'http', 'realm': '/spsi/ice/int'}
+
+        # The parameters of post_iceauth_oauth_token_helper
+        parameters = {
+            'password': password,
+            'username': username,
+            'client_secret': client_secret,
+            'client_id': client_id,
+            'grant_type': grant_type,
+        }
+
+        # The request payload of post_iceauth_oauth_token_helper
+        payload = {
+        }
+
+        # Default values to be used
+        if not password:
+            payload['password'] = INT_HOST[os.environ.get('ENV', 'password')]
+
+        if not username:
+            payload['username'] = INT_HOST[os.environ.get('ENV', 'username')]
+
+        if not client_secret:
+            payload['client_secret'] = INT_HOST[os.environ.get('ENV', 'client_secret')]
+
+        if not client_id:
+            payload['client_id'] = INT_HOST[os.environ.get('ENV', 'client_id')]
+
+        if not grant_type:
+            payload['grant_type'] = INT_HOST[os.environ.get('ENV', 'grant_type')]
+
+        logger.info(f"Helper function for iceauth/oauth/token payload :{payload}")
+        response = self.requests_utility.post('iceauth/oauth/token', payload=payload, headers=headers,
+                                              params=parameters, auth=auth)
+        return response

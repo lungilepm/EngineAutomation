@@ -21,7 +21,7 @@ class RequestsUtility(object):
             f"Expected status code {self.expected_status_code} but actual {self.status_code}\n" \
             f"Response Json: {self.rs_json}"
 
-    def get(self, endpoint, payload=None, expected_status_code=200, headers=None, auth=None):
+    def get(self, endpoint, payload=None, expected_status_code=200, headers=None, params=None, auth=None):
 
         if not headers:
             headers = {"Content-Type": "application/json",
@@ -41,7 +41,7 @@ class RequestsUtility(object):
 
         request = json.dumps(payload)
 
-        rs_api = requests.get(url=self.url, data=request, headers=headers)
+        rs_api = requests.get(url=self.url, data=request, headers=headers, params=params)
         # import pdb
         # pdb.set_trace()
         self.expected_status_code = expected_status_code
@@ -51,7 +51,7 @@ class RequestsUtility(object):
         logger.debug(f"return payload for get '{endpoint}'\n{self.rs_json}")
         return self.rs_json
 
-    def post(self, endpoint, payload=None, expected_status_code=200, headers=None, auth=None):
+    def post(self, endpoint, payload=None, expected_status_code=200, headers=None, params=None, auth=None):
 
         if not headers:
             headers = {"Content-Type": "application/json",
@@ -65,7 +65,7 @@ class RequestsUtility(object):
 
         request = json.dumps(payload)
 
-        rs_api = requests.post(url=self.url, data=request, headers=headers)
+        rs_api = requests.post(url=self.url, data=request, headers=headers, params=params)
         # import pdb
         # pdb.set_trace()
         self.expected_status_code = expected_status_code

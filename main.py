@@ -11,17 +11,35 @@ if_not = ""
 test_end = ""
 file_content = file1.readlines()
 headers = dict()
-parameters_payload = ""
+params = ""
 array2 = []
 for line in file_content:
-    if regex.search("curl", line):
+    # Creating parameters payload
+    if regex.search("\?", line):
+        temp = regex.search("(?<=\?).*.(?=')",
+                            line).group().lower()  # parameters such as token?grant_type=password&client_id=
+        tempar = regex.split("&", temp)  # split all the values of the parameters
+        for x in tempar:
+            para = regex.split("=", x)
+            params = f"\'{para[0]}\':{para[0]},\t\n\t" + params
+            function_parameters = f"{para[0]}=None, " + function_parameters  # create function parameters
+            if_not = f"if not {para[0]}:\n \t\tpayload[\'{para[0]}\'] = INT_HOST[os.environ.get('ENV', \'{para[0]}\')]\n\t\n\t" + if_not
+    # Creating endpoints and function names
+    if regex.search("curl", line) and regex.search("\?", line):
+        test_end = regex.search("(?<=\.za/).*.(?=\?)", line).group().lower()  # endpoint such as /ICEAUTH/oauth/token
+        call_type = regex.search("(?<=request).*.(?=\s')",
+                                 line).group().strip().lower()  # api call weather post/get/put
+        temp = (call_type + "_" + regex.sub("/", "_", test_end)).lower()  # replace / with _ on the endpoint
+        name_test_function = "test_" + temp  # create name of test function
+        name_helper = "" + temp + "_helper"  # create name of helper function
+    elif regex.search("curl", line):
         test_end = regex.search("(?<=\.za/).*.(?=')", line).group().lower()  # endpoint such as /ICEAUTH/oauth/token
         call_type = regex.search("(?<=request).*.(?=\s')",
                                  line).group().strip().lower()  # api call weather post/get/put
         temp = (call_type + "_" + regex.sub("/", "_", test_end)).lower()  # replace / with _ on the endpoint
         name_test_function = "test_" + temp  # create name of test function
         name_helper = "" + temp + "_helper"  # create name of helper function
-
+    # Creating headers payload
     if regex.search("header", line) and not regex.search("Bearer", line):
         headers['compress_token'] = 'true'
         temp = regex.search("(?<=\s').*.(?=')", line).group().lower()  # find the headers of the call
@@ -34,6 +52,7 @@ for line in file_content:
         array = regex.split(":", temp)  # split the name of header and the header
         headers[array[0]] = 'bearer_auth'
 
+    #creating body parameters and function parameters
     if regex.search("\"", line):
         temp = regex.search("(?<=\").*.", line).group()  # find the parameters
         temp = regex.sub(",", "", temp)  # remove the (, )
@@ -59,19 +78,22 @@ final = f"import os\n" \
         f"\tbearer_auth = f'Bearer {{auth}}'\n" \
         f"\n\t# The headers of the request \n" \
         f"\theaders ={headers}\n" \
+        f"\n\t# The parameters of {name_helper}\n" \
+        f"\tparameters = " \
+        f"{{\n\t{params}}}\n\n" \
         f"\n\t# The request payload of {name_helper}\n" \
         f"\tpayload = " \
         f"{{\n\t{parameters_payload}}}\n\n" \
         f"\t# Default values to be used\n" \
         f"\t{if_not}\n" \
         f"\tlogger.info(f\"Helper function for {test_end} payload :{{payload}}\")\n" \
-        f"\tresponse = self.requests_utility.{call_type}(\'{test_end}\', payload=payload, headers=headers, auth=auth)\n" \
+        f"\tresponse = self.requests_utility.{call_type}(\'{test_end}\', payload=payload, headers=headers, params=parameters, auth=auth)\n" \
         f"\treturn response\n\n" \
         f"def {name_test_function}():\n" \
         f"\texpected_assert = 'Listed results'\n" \
         f"\tlogger.info(\"TEST: test {call_type}  call: {test_end}\")\n" \
         f"\tapi_info = obj_auth.{name_helper}()\n" \
-        f"\tlogger.debug(f\"TEST: test that a {call_type} can access {test_end} return payload {{api_info}}\")\n" \
+        f"\tlogger.debug(f\"TEST: test {call_type} call {test_end} return payload: {{api_info}}\")\n" \
         f"\tactual_result = api_info['message']\n" \
         f"\tassert expected_assert == actual_result, f\"test failed to assert positive\"\n" \
         f"\tf\"Expected assert: {{expected_assert}} but actual: {{actual_result}}\"\n" \
@@ -81,6 +103,6 @@ f = open(fpath + "_made.py", "w")
 f.write(final)
 f.close()
 
-# import pdb
-#
-# pdb.set_trace()
+import pdb
+
+pdb.set_trace()

@@ -49,3 +49,14 @@ def test_get_iceauth_api_realms():
     actual_result = api_info[0]['name']
     assert expected_assert == actual_result, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_result}"
+
+
+def test_post_iceauth_oauth_token_2():
+    expected_assert = 'bearer'
+    logger.info("TEST: test post  call: iceauth/oauth/token")
+    api_info = obj_auth.post_iceauth_oauth_token_helper_2()
+    logger.debug(f"TEST: test post call iceauth/oauth/token return payload: {api_info}")
+    actual_result = api_info['token_type']
+    assert expected_assert == actual_result, f"test failed to assert positive"
+    f"Expected assert: {expected_assert} but actual: {actual_result}"
+
