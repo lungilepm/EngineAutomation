@@ -5,6 +5,8 @@ import os
 from datetime import datetime
 import oracledb
 from faker import Faker
+import random
+from os.path import exists
 
 from configs.hosts_config import INT_HOST
 
@@ -16,20 +18,39 @@ SERIALNUMBER = IDNUMBER
 CHASSIS_NUMBER = 'LUN' + change + 'NBI'
 ENTRYNUMBER = '2022NRB' + change + '00'
 PLATENUMBER = 'LUN' + change
+fspath = 'C:\PycharmProjects\EngineAutomation'
 
 
 def generate_username():
     email = INT_HOST[os.environ.get('ENV', 'mail')]
     logger.debug("Generating random username")
     faker = Faker()
-    name = faker.first_name() + "Test"
+    number_int = random.randint(1000, 9999)
+
+    name = faker.first_name() + str(number_int)
     surname = faker.last_name() + "Test"
     person_info = {'name': name, 'surname': surname, 'email': email}
-    # import pdb
-    # pdb.set_trace()
+
     logger.debug(f"Randomly generated username: {person_info}")
     return person_info
 
+
+def write_to_text(file_path, to_write, file_type, mode):
+    full_file = fspath+"\\"+file_path + "." + file_type
+    if mode == "w":
+        f = open(full_file, mode="w")
+        f.write(to_write)
+        f.close()
+    if mode == "a":
+        if exists(full_file):
+            f = open(full_file, mode="a")
+            f.write(to_write)
+            f.close()
+        else:
+            file = open(full_file, "w")
+            file = open(full_file, mode="a")
+            file.write(to_write)
+            file.close()
 #
 # def connect_to_database(environment):
 #     config = configparser.RawConfigParser()

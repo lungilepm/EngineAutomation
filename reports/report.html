@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 08-Sep-2022 at 22:44:26 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 15-Sep-2022 at 13:31:31 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -262,8 +262,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.8.7</td></tr></table>
     <h2>Summary</h2>
-    <p>4 tests ran in 3.19 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>2 tests ran in 3.56 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -274,20 +274,11 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/auth/test_token_controller.py::test_post_iceauth_api_v2_users_json</td>
-          <td class="col-duration">0.05</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">def test_post_iceauth_api_v2_users_json():<br/>        expected_assert = &#x27;User created&#x27;<br/>        logger.info(&quot;TEST: test post  call: iceauth/api/v2/users/json&quot;)<br/>&gt;       api_info = obj_auth.post_iceauth_api_v2_users_json_helper()<br/><br/>tests\auth\test_token_controller.py:25: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>helpers\auth_helpers.py:61: in post_iceauth_api_v2_users_json_helper<br/>    temp = generate_username()<br/>utilities\genericUtilities.py:31: in generate_username<br/>    INT_HOST[os.environ[&#x27;new_username&#x27;]] = name<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = environ({&#x27;ALLUSERSPROFILE&#x27;: &#x27;C:\\ProgramData&#x27;, &#x27;APPDATA&#x27;: &#x27;C:\\Users\\lungilem\\AppData\\Roaming&#x27;, &#x27;COMMONPROGRAMFILES...on-history&#x27;, &#x27;PYTEST_CURRENT_TEST&#x27;: &#x27;tests/auth/test_token_controller.py::test_post_iceauth_api_v2_users_json (call)&#x27;})<br/>key = &#x27;new_username&#x27;<br/><br/>    def __getitem__(self, key):<br/>        try:<br/>            value = self._data[self.encodekey(key)]<br/>        except KeyError:<br/>            # raise KeyError with the original key value<br/>&gt;           raise KeyError(key) from None<br/><span class="error">E           KeyError: &#x27;new_username&#x27;</span><br/><br/>C:\Python38\lib\os.py:675: KeyError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/auth/test_token_controller.py::test_post_iceauth_oauth_token</td>
-          <td class="col-duration">0.81</td>
+          <td class="col-name">tests/auth/test_token_controller.py::test_post_iceauth_api_roles_addusertorole[SysAdmin0]</td>
+          <td class="col-duration">1.53</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -295,17 +286,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/auth/test_token_controller.py::test_get_iceauth_api_v2_users_json</td>
-          <td class="col-duration">0.61</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">tests/auth/test_token_controller.py::test_get_iceauth_api_realms</td>
-          <td class="col-duration">0.69</td>
+          <td class="col-name">tests/auth/test_token_controller.py::test_post_iceauth_api_roles_addusertorole[SysAdmin1]</td>
+          <td class="col-duration">1.44</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">

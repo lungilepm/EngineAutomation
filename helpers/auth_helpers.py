@@ -9,11 +9,12 @@ class AuthHelper(object):
     def __init__(self):
         self.requests_utility = RequestsUtility()
 
+    # region _____________________________________TOKEN_CONTROLLER_______________________________________________________________
     def post_iceauth_oauth_token_helper(self, uSub=None, otp=None, refresh_token=None, password=None, username=None,
                                         grant_type=None, client_secret=None, client_id=None):
 
         # The headers of the request
-        headers = {'compress_token': 'true', 'content-type': 'application/json', 'accept': '*/*'}
+        headers = {'compress_token': 'true', 'content-type': 'application/json', 'Accept': '*/*'}
 
         # The request payload of post_iceauth_oauth_token_helper
         payload = {
@@ -55,6 +56,7 @@ class AuthHelper(object):
         response = self.requests_utility.post('iceauth/oauth/token', payload=payload, headers=headers)
         return response
 
+    # endregion
     def post_iceauth_api_v2_users_json_helper(self, userMetaData=None, uid=None, surname=None, preferredLanguage=None,
                                               organizationalUnit=None, mail=None, initials=None, givenName=None,
                                               commonName=None, cellN=None):
@@ -110,7 +112,7 @@ class AuthHelper(object):
             payload['cellN'] = INT_HOST[os.environ.get('ENV', 'cellN')]
 
         logger.info(f"Helper function for iceauth/api/v2/users/json payload :{payload}")
-        response = self.requests_utility.post('iceauth/api/v2/users/json', payload=payload, headers=headers, auth=auth)
+        response = self.requests_utility.post('iceauth/api/v2/users/json', payload=payload, headers=headers)
         return response
 
     def get_iceauth_api_v2_users_json_helper(self, uid=None, newPassword=None, currPassword=None):
@@ -118,7 +120,7 @@ class AuthHelper(object):
         bearer_auth = f'Bearer {auth}'
 
         # The headers of the request
-        headers = {'content-type': 'application/json', 'accept': '*/*', 'authorization': bearer_auth}
+        headers = {'content-type': 'application/json', 'accept': '*/*', 'Authorization': bearer_auth}
 
         # The request payload of get_iceauth_api_v2_users_json_helper
         payload = {
@@ -137,7 +139,7 @@ class AuthHelper(object):
         #     payload['currPassword'] = INT_HOST[os.environ.get('ENV', 'currPassword')]
 
         logger.info(f"Helper function for iceauth/api/v2/users/json payload :{payload}")
-        response = self.requests_utility.get('iceauth/api/v2/users/json', payload=payload, headers=headers, auth=auth)
+        response = self.requests_utility.get('iceauth/api/v2/users/json', payload=payload, headers=headers)
         return response
 
     def get_iceauth_api_realms_helper(self):
@@ -154,17 +156,20 @@ class AuthHelper(object):
         # Default values to be used
 
         logger.info(f"Helper function for iceauth/api/realms payload :{payload}")
-        response = self.requests_utility.get('iceauth/api/realms', payload=payload, headers=headers, auth=auth)
+        response = self.requests_utility.get('iceauth/api/realms', payload=payload, headers=headers)
         return response
 
     def post_iceauth_oauth_token_helper_2(self, password=None, username=None, client_secret=None, client_id=None,
-                                        grant_type=None):
-        auth = self.post_iceauth_oauth_token_helper()['access_token']
-        bearer_auth = f'Bearer {auth}'
+                                          grant_type=None):
+        authorization = self.post_iceauth_oauth_token_helper()['access_token']
 
         # The headers of the request
-        headers = {'compress_token': 'true', 'accept': 'application/json',
-                   'content-type': 'application/x-www-form-urlencoded', 'origin': 'http', 'realm': '/spsi/ice/int'}
+        headers = {
+            'realm': 'realm',
+            'origin': 'origin',
+            'content-type': 'content-type',
+            'compress_token': 'compress_token',
+            'accept': 'accept'}
 
         # The parameters of post_iceauth_oauth_token_helper
         parameters = {
@@ -172,8 +177,7 @@ class AuthHelper(object):
             'username': username,
             'client_secret': client_secret,
             'client_id': client_id,
-            'grant_type': grant_type,
-        }
+            'grant_type': grant_type}
 
         # The request payload of post_iceauth_oauth_token_helper
         payload = {
@@ -181,21 +185,82 @@ class AuthHelper(object):
 
         # Default values to be used
         if not password:
-            payload['password'] = INT_HOST[os.environ.get('ENV', 'password')]
+            parameters['password'] = INT_HOST[os.environ.get('ENV', 'password')]
 
         if not username:
-            payload['username'] = INT_HOST[os.environ.get('ENV', 'username')]
+            parameters['username'] = INT_HOST[os.environ.get('ENV', 'username')]
 
         if not client_secret:
-            payload['client_secret'] = INT_HOST[os.environ.get('ENV', 'client_secret')]
+            parameters['client_secret'] = INT_HOST[os.environ.get('ENV', 'client_secret')]
 
         if not client_id:
-            payload['client_id'] = INT_HOST[os.environ.get('ENV', 'client_id')]
+            parameters['client_id'] = INT_HOST[os.environ.get('ENV', 'client_id')]
 
         if not grant_type:
-            payload['grant_type'] = INT_HOST[os.environ.get('ENV', 'grant_type')]
+            parameters['grant_type'] = INT_HOST[os.environ.get('ENV', 'grant_type')]
 
         logger.info(f"Helper function for iceauth/oauth/token payload :{payload}")
-        response = self.requests_utility.post('iceauth/oauth/token', payload=payload, headers=headers,
-                                              params=parameters, auth=auth)
+        response = self.requests_utility.post('ICEAUTH/oauth/token', payload=payload, headers=headers,
+                                              params=parameters, expected_status_code=500)
+        return response
+
+    def get_iceauth_api_roles_getallroles_helper(self, agencyId=None):
+        Authorization = f"Bearer {self.post_iceauth_oauth_token_helper()['access_token']}"
+
+        # The headers of the request
+        headers = {
+            'Authorization': Authorization,
+            'Accept': ',*/*'}
+
+        # The parameters of get_iceauth_api_roles_getallroles_helper
+        parameters = {
+            'agencyId': agencyId}
+
+        # The request payload of get_iceauth_api_roles_getallroles_helper
+        payload = {
+        }
+
+        # Default values to be used
+        if not agencyId:
+            parameters['agencyId'] = INT_HOST[os.environ.get('ENV', 'agencyId')]
+
+        logger.info(f"Helper function for ICEAUTH/api/roles/getAllRoles payload :{payload}")
+        response = self.requests_utility.get('ICEAUTH/api/roles/getAllRoles', payload=payload, headers=headers,
+                                             params=parameters)
+        return response
+
+    def post_iceauth_api_roles_addusertorole_helper(self, uid=None, roleName=None, clearCache=None, agencyId=None):
+        Authorization = f"Bearer {self.post_iceauth_oauth_token_helper()['access_token']}"
+
+        # The headers of the request
+        headers = {
+            'Authorization': Authorization}
+
+        # The parameters of post_iceauth_api_roles_addusertorole_helper
+        parameters = {
+            'uid': uid,
+            'roleName': roleName,
+            'clearCache': clearCache,
+            'agencyId': agencyId}
+
+        # The request payload of post_iceauth_api_roles_addusertorole_helper
+        payload = {
+        }
+
+        # Default values to be used
+        if not uid:
+            parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
+
+        if not roleName:
+            parameters['roleName'] = INT_HOST[os.environ.get('ENV', 'roleName')]
+
+        if not clearCache:
+            parameters['clearCache'] = True
+
+        if not agencyId:
+            parameters['agencyId'] = INT_HOST[os.environ.get('ENV', 'agencyId')]
+
+        logger.info(f"Helper function for ICEAUTH/api/roles/addUserToRole payload :{payload}")
+        response = self.requests_utility.post('ICEAUTH/api/roles/addUserToRole', payload=payload, headers=headers,
+                                              params=parameters, expected_status_code=201)
         return response
