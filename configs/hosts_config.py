@@ -19,13 +19,18 @@ INT_HOST = {
     "initials": "LP",
     "organizationalUnit": "0",
     "preferredLanguage": "en",
+    "agencies": ['0', '6', '9', '6000000', '2000007', '9800000'],
     "surname": 'Motsweni',
     "userMetaData": {},
+    "baseRoles": ['AuthAdmin', 'SysAdmin', 'AudAdmin', 'CfgImporter', 'CFGADMIN', 'LookupAdmin', 'CFGTEMPLATE', 'AppAdmin', 'AuthUser', 'System'],
     "grant_type": 'password',
     "client_id": 'client',
     "client_secret": 'password',
     "refresh_token": None,
-    "new_username": None
+    "new_username": None,
+    "usernamedb": "LUNGILEMOTSWENI",
+    "passworddb": "3230Ayanda#1",
+    "dsn": "zayvdb08.spsi.co.za:1521/"
 }
 
 MAS_HOST = {
@@ -46,7 +51,6 @@ CONFLUENCE_HOST = {
     "key": "Qa0xa95oNCFi9THaYdom7781",
     "confluenceUrl": "https://icetechprod03.atlassian.net/"
 }
-
 
 DB_HOST = {
 

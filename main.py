@@ -15,8 +15,8 @@ def if_noter(ray, name):
     return noting
 
 
-def payload_maker(ray, flag_gem=False,ray2=None):
-    if not flag_gem or ray =='Authorization':
+def payload_maker(ray, flag_gem=False, ray2=None):
+    if not flag_gem or ray == 'Authorization':
         pay = f"\'{ray}\':{ray},\t\n\t"
     else:
         pay = f"\'{ray}\':\'{ray2}\',\t\n\t"
@@ -50,25 +50,25 @@ for line in file_content:
     # Creating endpoints and function names
     if regex.search("curl", line) and regex.search("\?", line):
         test_end = regex.search("(?<=\.za/).*.(?=\?)", line).group()  # endpoint such as /ICEAUTH/oauth/token
-        call_type = regex.search("(?<=request).*.(?=\s')",
-                                 line).group().strip().lower()  # api call weather post/get/put
+        call_type = (regex.search("(?<=request).*.(?=\s')",
+                                  line).group().strip()).lower()  # api call weather post/get/put
         temp = (call_type + "_" + regex.sub("/", "_", test_end))  # replace / with _ on the endpoint
         name_test_function = ("test_" + temp).lower()  # create name of test function
         name_helper = ("" + temp + "_helper").lower()  # create name of helper function
     elif regex.search("curl", line):
-        test_end = regex.search("(?<=\.za/).*.(?=')", line).group() # endpoint such as /ICEAUTH/oauth/token
-        call_type = regex.search("(?<=request).*.(?=\s')",
-                                 line).group().strip()  # api call weather post/get/put
+        test_end = regex.search("(?<=\.za/).*.(?=')", line).group()  # endpoint such as /ICEAUTH/oauth/token
+        call_type = (regex.search("(?<=request).*.(?=\s')",
+                                  line).group().strip()).lower()  # api call weather post/get/put
         temp = (call_type + "_" + regex.sub("/", "_", test_end))  # replace / with _ on the endpoint
-        name_test_function = "test_" + temp  # create name of test function
-        name_helper = "" + temp + "_helper"  # create name of helper function
+        name_test_function = ("test_" + temp).lower()  # create name of test function
+        name_helper = ("" + temp + "_helper").lower()  # create name of helper function
 
     # Creating headers payload
     if regex.search("header", line):
         # headers['compress_token'] = 'true'
-        temp = regex.search("(?<=\s').*.(?=')", line).group() # find the headers of the call
-        array = regex.split(":", temp)  # split the name of header and the header
-        headers = payload_maker(array[0], True,array[1]) + headers
+        temp = regex.search("(?<=\s').*.(?=')", line).group()  # find the headers of the call
+        array = regex.split(": ", temp)  # split the name of header and the header
+        headers = payload_maker(array[0], True, array[1]) + headers
 
     # creating headers body parameters and function parameters
     if regex.search("\"", line):
@@ -79,8 +79,7 @@ for line in file_content:
         function_parameters = f"{array1[0]}=None, " + function_parameters
         parameters_payload = payload_maker(array1[0], False) + parameters_payload
 
-        if_not = if_noter(array1[0],'payload') + if_not
-
+        if_not = if_noter(array1[0], 'payload') + if_not
 
 function_parameters = stripper(function_parameters)
 parameters_payload = stripper(parameters_payload)
@@ -104,7 +103,7 @@ final = f"import os\n" \
         f"{{\n\t{parameters_payload}}}\n\n" \
         f"\t# Default values to be used\n" \
         f"\t{if_not}\n" \
-        f"\tlogger.info(f\"Helper function for {test_end} payload :{{payload}}\")\n" \
+        f"\tlogger.info(f\"Helper function for iceauth/api/v2/users/json Authentication: {{Authorization}}\\npayload :{{payload}}\\nparams :{{parameters}}\\nheaders :{{headers}}\")\n" \
         f"\tresponse = self.requests_utility.{call_type}(\'{test_end}\', payload=payload, headers=headers, params=parameters)\n" \
         f"\treturn response\n\n" \
         f"def {name_test_function}():\n" \
@@ -122,5 +121,3 @@ write_to_text(file_path=fpath, to_write=final, file_type='py', mode='w')
 # import pdb
 #
 # pdb.set_trace()
-
-

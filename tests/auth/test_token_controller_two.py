@@ -1,54 +1,20 @@
-from helpers.auth.TokenController import TokenController
+from helpers.auth.TokenControllerTwo import TokenControllerTwo
 from utilities.genericUtilities import *
 
-obj_auth = TokenController()
-agencies = INT_HOST[os.environ.get('ENV', 'agencies')]
+obj_auth = TokenControllerTwo()
+agencies = ['0']
 baseRoles = ['AuthAdmin', 'SysAdmin', 'AudAdmin', 'CfgImporter', 'CFGADMIN', 'LookupAdmin', 'CFGTEMPLATE', 'AppAdmin',
              'AuthUser', 'System']
 
 
-# pytest --html=reports/report.html
-# region _____________________________________TOKEN_CONTROLLER_______________________________________________________________
-# def test_post_iceauth_oauth_token_params():
-#     expected_assert = 'bearer'
-#     logger.info("TEST: test post call iceauth/oauth/token")
-#     api_info = obj_auth.post_iceauth_oauth_token_params_helper()
-#     logger.debug(f"TEST: test that a post can access iceauth/oauth/token return payload {api_info}")
-#     actual_result = api_info['token_type']
-#     assert expected_assert == actual_result, f"test failed to assert positive"
-#     f"Expected assert: {expected_assert} but actual: {actual_result}"
-
-
-def test_post_iceauth_oauth_token():
-    expected_assert = 'bearer'
-    logger.info("TEST: test post  call: ICEAUTH/oauth/token")
-    api_info = obj_auth.post_iceauth_oauth_token_helper()
-    logger.debug(f"TEST: test post call ICEAUTH/oauth/token return payload: {api_info}")
-    actual_result = api_info['token_type']
+def test_post_iceauth_api_v2_users_json():
+    expected_assert = 'User created'
+    logger.info("TEST: test post  call: iceauth/api/v2/users/json")
+    api_info = obj_auth.post_iceauth_api_v2_users_json_helper()
+    logger.debug(f"TEST: test that a post can access iceauth/api/v2/users/json return payload {api_info}")
+    actual_result = api_info['message']
     assert expected_assert == actual_result, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_result}"
-
-# def test_post_iceauth_oauth_token_2():
-#     expected_assert = 'bearer'
-#     logger.info("TEST: test post  call: ICEAUTH/oauth/token")
-#     api_info = obj_auth.post_iceauth_oauth_token_helper_2()
-#     logger.debug(f"TEST: test post call ICEAUTH/oauth/token return payload: {api_info}")
-#     actual_result = api_info['token_type']
-#     assert expected_assert == actual_result, f"test failed to assert positive"
-#     f"Expected assert: {expected_assert} but actual: {actual_result}"
-
-
-# endregion
-
-
-# def test_post_iceauth_api_v2_users_json():
-#     expected_assert = 'User created'
-#     logger.info("TEST: test post  call: iceauth/api/v2/users/json")
-#     api_info = obj_auth.post_iceauth_api_v2_users_json_helper()
-#     logger.debug(f"TEST: test that a post can access iceauth/api/v2/users/json return payload {api_info}")
-#     actual_result = api_info['message']
-#     assert expected_assert == actual_result, f"test failed to assert positive"
-#     f"Expected assert: {expected_assert} but actual: {actual_result}"
 #
 #
 # def test_get_iceauth_api_v2_users_json():
