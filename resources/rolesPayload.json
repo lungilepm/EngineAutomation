@@ -1,0 +1,52 @@
+[
+    {
+        "roleName": "AuthAdmin",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "SysAdmin",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "AudAdmin",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "CfgImporter",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "CFGADMIN",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "LookupAdmin",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "CFGTEMPLATE",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "AppAdmin",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "AuthUser",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    },
+    {
+        "roleName": "System",
+        "agencyId": 10,
+        "uid": "{{username}}"
+    }
+]

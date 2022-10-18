@@ -22,7 +22,7 @@ INT_HOST = {
     "agencies": ['0', '6', '9', '6000000', '2000007', '9800000'],
     "surname": 'Motsweni',
     "userMetaData": {},
-    "baseRoles": ['AuthAdmin', 'SysAdmin', 'AudAdmin', 'CfgImporter', 'CFGADMIN', 'LookupAdmin', 'CFGTEMPLATE', 'AppAdmin', 'AuthUser', 'System'],
+    "baseRoles": ['SysAdmin', 'CFGTEMPLATE', 'System', 'AudAdmin', 'LookupAdmin',  'CFGADMIN', 'AuthAdmin', 'AppAdmin', 'CfgImporter', 'AuthUser'],
     "grant_type": 'password',
     "client_id": 'client',
     "client_secret": 'password',

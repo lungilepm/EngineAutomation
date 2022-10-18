@@ -39,10 +39,28 @@ def generate_username():
 
 def write_to_text(file_path, to_write, file_type, mode):
     full_file = fspath + "\\" + file_path + "." + file_type
-    if mode == "w" and file_type == 'json':
+    if mode == "w":
         with open(full_file, mode="w") as file:
             file.write(to_write)
-            json.dumps(to_write, file, indent=4)
+
+    if mode == "a":
+        if exists(full_file):
+            with open(full_file, mode="a") as file:
+                file.write(to_write)
+        else:
+            with open(full_file, mode="w") as file:
+                file.write(to_write)
+
+    if mode == "a" and file_type == 'json':
+        if exists(full_file):
+            with open(full_file + "." + file_type, mode="w") as file:
+                json.dumps(to_write, file, indent=4)
+
+        else:
+            file = open(full_file, "w")
+            file = open(full_file, mode="a")
+            file.write(to_write)
+            file.close()
 
 
 def read_doc(file_path, file_type):
@@ -137,14 +155,3 @@ def insert_kra_simba(environment):
         connection.commit()
     except oracledb.Error as Error:
         print(Error)
-
-
-class TestDataManager:
-    read_doc(file_path="resources\logRoles", file_type="json")
-    # env = ["DEV", "INT", "MAS", "TST"]
-    # for x in env:
-    #     insert_nrb_id(x)
-    #     insert_kra_individual_pin(x)
-    #     insert_kra_simba(x)
-    #     connection = connect_to_database(x)
-    #     print_to_excel(x, connection, x)

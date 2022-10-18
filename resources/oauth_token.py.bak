@@ -40,3 +40,6 @@ def test_get_iceauth_api_v2_users():
 	assert expected_assert == actual_result, f"test failed to assert positive"
 	f"Expected assert: {expected_assert} but actual: {actual_result}"
 	f"TEST:test get call ICEAUTH/api/v2/users return payload:{api_info}") 
+	assert expected_assert in api_info[0], 
+	f"test failed to assert positive"
+	f"Expected assert:{expected_assert} but actual does not exist"

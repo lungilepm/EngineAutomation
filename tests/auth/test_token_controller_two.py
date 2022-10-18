@@ -15,18 +15,7 @@ def test_post_iceauth_api_v2_users_json():
     actual_result = api_info['message']
     assert expected_assert == actual_result, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_result}"
-#
-#
-# def test_get_iceauth_api_v2_users_json():
-#     expected_assert = 'Listed results'
-#     logger.info("TEST: test that a get can access iceauth/api/v2/users/json")
-#     api_info = obj_auth.get_iceauth_api_v2_users_json_helper()
-#     logger.debug(f"TEST: test that a get can access iceauth/api/v2/users/json return payload {api_info}")
-#     actual_result = api_info['message']
-#     assert expected_assert == actual_result, f"test failed to assert positive"
-#     f"Expected assert: {expected_assert} but actual: {actual_result}"
-#
-#
+
 # def test_get_iceauth_api_realms():
 #     expected_assert = INT_HOST[os.environ.get('ENV', 'realm')]
 #     logger.info("TEST: test that a get can access iceauth/api/realms")
