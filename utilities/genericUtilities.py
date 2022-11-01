@@ -43,24 +43,37 @@ def write_to_text(file_path, to_write, file_type, mode):
         with open(full_file, mode="w") as file:
             file.write(to_write)
 
+
+def write_to_json(file_path, to_write, mode):
+    values = read_doc(file_path, "json")
+    if len(values) < 1 or len(to_write) < 1:
+        write_to_json_help(file_path, to_write, mode)
+    else:
+        for i, elem in enumerate(values):
+            for j, term in enumerate(to_write):
+                one = to_write[j]['username']
+                two = values[i]['username']
+                if one != two:
+                    write_to_json_help(file_path, to_write, mode)
+
+
+def write_to_json_help(file_path, to_write, mode):
+    full_file = fspath + "\\" + file_path + ".json"
+    dict_returned = to_write
     if mode == "a":
-        if exists(full_file):
-            with open(full_file, mode="a") as file:
-                file.write(to_write)
-        else:
+        we = json.dumps(dict_returned)
+        with open(full_file, mode="w") as file:
+            file.write(we)
+        # import pdb
+        #
+        # pdb.set_trace()
+    if mode == "w":
+        if not exists(full_file):
             with open(full_file, mode="w") as file:
-                file.write(to_write)
-
-    if mode == "a" and file_type == 'json':
-        if exists(full_file):
-            with open(full_file + "." + file_type, mode="w") as file:
-                json.dumps(to_write, file, indent=4)
-
-        else:
-            file = open(full_file, "w")
-            file = open(full_file, mode="a")
-            file.write(to_write)
-            file.close()
+                file.write("[]")
+        we = json.dumps(dict_returned)
+        with open(full_file, mode="w") as file:
+            file.write(we)
 
 
 def read_doc(file_path, file_type):
@@ -73,6 +86,15 @@ def read_doc(file_path, file_type):
     #
     # pdb.set_trace()
     return dict_returned
+
+
+def find_index(mr_dict, content, element):
+    indices = []
+    for i, elem in enumerate(mr_dict):
+        if elem[element] == content:
+            indices.append(i)
+    indices = list(dict.fromkeys(indices))
+    return indices
 
 
 def connect_to_database(environment):
