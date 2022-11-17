@@ -1,9 +1,10 @@
-import requests
-import os
 import json
+import logging as logger
+import os
+
+import requests
 
 from configs.hosts_config import INT_HOST
-import logging as logger
 
 
 class RequestsUtility(object):

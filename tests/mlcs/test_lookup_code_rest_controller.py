@@ -1,6 +1,5 @@
 import pytest
 
-from helpers.auth.TokenControllerTwo import TokenControllerTwo
 from helpers.mlcs.LookupCodeRestController import LookupCodeRestController
 from utilities.genericUtilities import *
 

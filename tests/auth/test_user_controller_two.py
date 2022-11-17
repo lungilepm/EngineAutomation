@@ -46,9 +46,6 @@ def test_post_iceauth_api_v2_users_json():
     f"Expected assert: {expected_assert} but actual: {actual_assert}"
     f"TEST:test get call ICEAUTH/api/v2/users/activate return payload:{api_info}"
     written = {'username': name, 'password': password}
-    values = read_doc(role_path, "json")
-    values.append(written)
-    write_to_json(role_path, values, mode="a")
 
 
 @pytest.mark.second
@@ -60,22 +57,29 @@ def test_get_iceauth_api_v2_users_json_getusersforagency():
     actual_result = api_info['message']
     assert expected_assert == actual_result, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_result}"
+
+
+def user_delete():
+    obj_auth.post_iceauth_api_v2_users_json_helper()
+    api_info = obj_auth.get_iceauth_api_v2_users_json_getusersforagency_helper()
+    logger.debug(f"TEST: test get call ICEAUTH/api/v2/users/json/getUsersForAgency return payload: {api_info}")
     ind_num = find_index(api_info['data'][0], 'LP', element='initials')
 
     for i, elem in enumerate(ind_num):
-        values = read_doc(role_path, "json")
         use = api_info['data'][0][elem]['uid']
         written = {'username': use, 'password': api_info['data'][0][elem]['userPassword']}
-        values.append(written)
-        write_to_json(role_path, values, mode="a")
+        yield written
     # import pdb
     #
     # pdb.set_trace()
 
 
-@pytest.mark.parametrize("user", user_reset())
+@pytest.mark.parametrize("user", user_delete())
 def test_post_iceauth_api_v2_users_password_update(user):
     expected_assert = username = user['username']
+    # import pdb
+    #
+    # pdb.set_trace()
     password = obj_auth.post_iceauth_api_v2_users_json_password_reset_helper(uid=username)['data'][0]['pwd']
     api_info = obj_auth.post_iceauth_api_v2_users_password_update_helper(uid=username, newPassword=username,
                                                                          currPassword=password)
@@ -85,14 +89,10 @@ def test_post_iceauth_api_v2_users_password_update(user):
     assert expected_assert == login, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {login}"
     f"TEST:test get call ICEAUTH/api/v2/users/activate return payload:{api_info}"
-    values = read_doc(role_path, "json")
-    ind_num = find_index(values, username, element='username')
-    values[ind_num[0]]['password'] = username
-    write_to_json(role_path, values, mode="a")
 
 
 @pytest.mark.third
-@pytest.mark.parametrize("user", user_reset())
+@pytest.mark.parametrize("user", user_delete())
 def test_post_iceauth_api_v2_users_json_password_reset(user):
     expected_assert = 'Password Reset'
     user_name = user['username']
@@ -103,31 +103,14 @@ def test_post_iceauth_api_v2_users_json_password_reset(user):
     assert expected_assert == actual_assert, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_assert}"
     f"TEST:test get call ICEAUTH/api/v2/users/activate return payload:{api_info}"
-    test = api_info['data'][0]['pwd']
-    values = read_doc(role_path, "json")
-    ind_num = find_index(values, user_name, element='username')
-    values[ind_num[0]]['password'] = test
-    values[ind_num[0]]['password'] = user['password']
-    write_to_json(role_path, values, mode="a")
-
-
-def user_delete():
-    written = dict
-    api_info = obj_auth.get_iceauth_api_v2_users_json_getusersforagency_helper()
-    logger.debug(f"TEST: test get call ICEAUTH/api/v2/users/json/getUsersForAgency return payload: {api_info}")
-    ind_num = find_index(api_info['data'][0], 'LP', element='initials')
-
-    for i, elem in enumerate(ind_num):
-        use = api_info['data'][0][elem]['uid']
-        written = {'username': use, 'password': api_info['data'][0][elem]['userPassword']}
-        yield written
-
-    write_to_json(role_path, written, mode="a")
 
 
 @pytest.mark.parametrize("user", user_delete())
 def test_delete_iceauth_api_v2_users(user):
     name = user['username']
+    # import pdb
+    #
+    # pdb.set_trace()
     expected_assert = f"User : {name} was not found"
     logger.info("TEST: test delete  call: ICEAUTH/api/v2/users")
     api_info = obj_auth.delete_iceauth_api_v2_users_helper(uid=name)
@@ -135,10 +118,7 @@ def test_delete_iceauth_api_v2_users(user):
     actual_result = obj_auth.get_iceauth_api_v2_users_helper(uid=name, expected_code=400)['error_detail']
     assert expected_assert == actual_result, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_result}"
-    values = read_doc(role_path, "json")
-    ind_num = find_index(values, name, element='username')
-    values.pop(ind_num[0])
-    write_to_json(role_path, values, mode="a")
+
     # import pdb
     #
     # pdb.set_trace()

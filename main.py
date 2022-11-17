@@ -1,4 +1,3 @@
-import json
 import regex
 
 from utilities.genericUtilities import write_to_text

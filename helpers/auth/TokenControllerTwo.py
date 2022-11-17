@@ -1,5 +1,6 @@
-import os
 import logging as logger
+import os
+
 from configs.hosts_config import INT_HOST
 from helpers.auth.TokenController import TokenController
 from utilities.genericUtilities import generate_username, write_to_text

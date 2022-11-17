@@ -1,16 +1,16 @@
 import configparser
 import json
-import csv
 import logging as logger
-import pandas as pd
 import os
-from datetime import datetime
-import oracledb
-from faker import Faker
 import random
+from datetime import datetime
 from os.path import exists
 
-from configs.hosts_config import INT_HOST
+import oracledb
+import pandas as pd
+from faker import Faker
+
+from configs.hosts_config import INT_HOST, read_doc
 
 date = datetime.now().strftime("%d/%b/%y")
 change = '75003'
@@ -74,18 +74,6 @@ def write_to_json_help(file_path, to_write, mode):
         we = json.dumps(dict_returned)
         with open(full_file, mode="w") as file:
             file.write(we)
-
-
-def read_doc(file_path, file_type):
-    full_file = fspath + "\\" + file_path + "." + file_type
-    dict_returned = dict
-    if file_type == 'json':
-        with open(full_file) as file:
-            dict_returned = json.load(file)
-    # import pdb
-    #
-    # pdb.set_trace()
-    return dict_returned
 
 
 def find_index(mr_dict, content, element):
@@ -177,3 +165,12 @@ def insert_kra_simba(environment):
         connection.commit()
     except oracledb.Error as Error:
         print(Error)
+
+# class TestDataManager:
+#     env = ["DEV", "INT", "MAS", "TST"]
+#     for x in env:
+#         insert_nrb_id(x)
+#         insert_kra_individual_pin(x)
+#         insert_kra_simba(x)
+#         connection = connect_to_database(x)
+#         print_to_excel(x, connection, x)

@@ -1,7 +1,6 @@
 import pytest
 
 from helpers.auth.TokenController import TokenController
-from helpers.auth.UserControllerTwo import UserControllerTwo
 from helpers.engine.CfgConditionRestController import CfgConditionRestController
 from utilities.genericUtilities import *
 

@@ -1,8 +1,4 @@
-import pytest
-
-from helpers.auth.TokenControllerTwo import TokenControllerTwo
 from helpers.mlcs.CallOutRestControllerSec import CallOutRestControllerSec
-from helpers.mlcs.LookupCodeRestController import LookupCodeRestController
 from utilities.genericUtilities import *
 
 obj_auth = CallOutRestControllerSec()
