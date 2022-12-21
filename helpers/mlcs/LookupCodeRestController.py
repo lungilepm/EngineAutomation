@@ -1,6 +1,8 @@
 import logging as logger
 import os
 
+import pytest
+
 from configs.hosts_config import INT_HOST
 from helpers.auth.TokenController import TokenController
 from utilities.genericUtilities import generate_username, write_to_text
@@ -13,6 +15,10 @@ class LookupCodeRestController(object):
         self.requests_utility = RequestsUtility()
         self.token_controller = TokenController()
         self.userName = []
+
+    @pytest.fixture(autouse=True)
+    def inject_fixtures(self, caplog):
+        self._caplog = caplog
 
     def get_mlcs_secure_lookupcodes_findallactivebylookupdefinitionid_helper(self, Accept=None, lookupDefinitionId=None,
                                                                              language=None, agencyId=None):
@@ -42,7 +48,7 @@ class LookupCodeRestController(object):
             parameters['lookupDefinitionId'] = INT_HOST[os.environ.get('ENV', 'lookupDefinitionId')]
 
         if not language:
-            parameters['language'] = INT_HOST[os.environ.get('ENV', 'preferredLanguage')]
+            parameters['language'] = INT_HOST[os.environ.get('ENV', 'language')]
 
         # if not agencyId:
         #     parameters['agencyId'] = INT_HOST[os.environ.get('ENV', 'agencyId')]
@@ -50,6 +56,7 @@ class LookupCodeRestController(object):
         logger.info(f"Helper function for MLCS/secure/lookupCodes/findAllActiveByLookupDefinitionId payload :{payload}")
         response = self.requests_utility.get('MLCS/secure/lookupCodes/findAllActiveByLookupDefinitionId',
                                              payload=payload, headers=headers, params=parameters)
+        logger.info(f"MLCS/secure/lookupCodes/findAllActiveByLookupDefinitionId, Response\n:{response}")
         return response
 
     def post_iceauth_api_v2_users_json_helper(self, userMetaData=None, uid=None, surname=None, preferredLanguage=None,
@@ -110,19 +117,8 @@ class LookupCodeRestController(object):
         logger.info(
             f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
         response = self.requests_utility.post('iceauth/api/v2/users/json', payload=payload, headers=headers)
-        # self.userName.append([response['data'][0]['uid']])
-
-        INT_HOST['username_list'].append([response['data'][0]['uid']])
-        import pdb
-
-        pdb.set_trace()
-        uid = response['data'][0]['uid']
-        password = response['data'][0]['userPassword']
-        '0'
-        strName = f"\"{uid}\", \"{password}\"\n"
-        write_to_text(file_path="resources\logRoles", to_write=strName, file_type="csv", mode="a")
+        logger.info(f"iceauth/api/v2/users/json, Response\n:{response}")
         return response
 
     def get_mlcs_secure_calloutservice_gethierarchymap_helper(self):
         pass
-

@@ -1,46 +1,35 @@
 import pytest
 
 from helpers.auth.TokenController import TokenController
-from helpers.auth.UserControllerTwo import UserControllerTwo
+from helpers.auth.UserControllerV2 import UserControllerV2
 from utilities.genericUtilities import *
 
-obj_auth = UserControllerTwo()
+obj_auth = UserControllerV2()
 login_check = TokenController()
 agencies = INT_HOST[os.environ.get('ENV', 'agencies')]
 baseRoles = INT_HOST[os.environ.get('ENV', 'baseRoles')]
 role_path = INT_HOST[os.environ.get('ENV', 'roles_path')]
 
-pytest.fixture()
 
-
-def user_reset():
-    values = read_doc(role_path, "json")
-    # import pdb
-    #
-    # pdb.set_trace()
-    for key in values:
-        yield key
-
-    print(f"After the test: {values}")
-
-
-def test_get_iceauth_api_v2_users():
+def test_get_iceauth_api_v2_users(caplog, user):
+    caplog.set_level(logger.INFO)
     expected_assert = 'authorities'
     logger.info("TEST: test get  call: ICEAUTH/api/v2/users")
-    api_info = obj_auth.get_iceauth_api_v2_users_helper()
+    api_info = obj_auth.get_iceauth_api_v2_users_helper(uid=user['username'])
     logger.debug(f"TEST: test get call ICEAUTH/api/v2/users return payload: {api_info}")
     assert expected_assert in api_info[0], f"test failed to assert positive"
     f"Expected assert:{expected_assert} but actual does not exist"
 
 
 @pytest.mark.first
-def test_post_iceauth_api_v2_users_json():
+def test_post_iceauth_api_v2_users_json(caplog):
+    caplog.set_level(logger.INFO)
     expected_assert = 'User created'
     logger.info("TEST: test post  call: ICEAUTH/api/v2/users/json")
     api_info = obj_auth.post_iceauth_api_v2_users_json_helper()
     logger.debug(f"TEST: test post call ICEAUTH/api/v2/users/json return payload: {api_info}")
-    password = api_info['data'][0]['password']
-    name = api_info['data'][0]['username']
+    password = api_info['data'][0]['userPassword']
+    name = api_info['data'][0]['uid']
     actual_assert = api_info['message']
     assert expected_assert == actual_assert, f"test failed to assert positive"
     f"Expected assert: {expected_assert} but actual: {actual_assert}"
@@ -49,7 +38,9 @@ def test_post_iceauth_api_v2_users_json():
 
 
 @pytest.mark.second
-def test_get_iceauth_api_v2_users_json_getusersforagency():
+def test_get_iceauth_api_v2_users_json_getusersforagency(caplog):
+    caplog.set_level(logger.INFO)
+
     expected_assert = 'Listed Users'
     logger.info("TEST: test get  call: ICEAUTH/api/v2/users/json/getUsersForAgency")
     api_info = obj_auth.get_iceauth_api_v2_users_json_getusersforagency_helper()
@@ -59,23 +50,8 @@ def test_get_iceauth_api_v2_users_json_getusersforagency():
     f"Expected assert: {expected_assert} but actual: {actual_result}"
 
 
-def user_delete():
-    obj_auth.post_iceauth_api_v2_users_json_helper()
-    api_info = obj_auth.get_iceauth_api_v2_users_json_getusersforagency_helper()
-    logger.debug(f"TEST: test get call ICEAUTH/api/v2/users/json/getUsersForAgency return payload: {api_info}")
-    ind_num = find_index(api_info['data'][0], 'LP', element='initials')
-
-    for i, elem in enumerate(ind_num):
-        use = api_info['data'][0][elem]['uid']
-        written = {'username': use, 'password': api_info['data'][0][elem]['userPassword']}
-        yield written
-    # import pdb
-    #
-    # pdb.set_trace()
-
-
-@pytest.mark.parametrize("user", user_delete())
-def test_post_iceauth_api_v2_users_password_update(user):
+def test_post_iceauth_api_v2_users_password_update(user, caplog):
+    caplog.set_level(logger.INFO)
     expected_assert = username = user['username']
     # import pdb
     #
@@ -91,9 +67,8 @@ def test_post_iceauth_api_v2_users_password_update(user):
     f"TEST:test get call ICEAUTH/api/v2/users/activate return payload:{api_info}"
 
 
-@pytest.mark.third
-@pytest.mark.parametrize("user", user_delete())
-def test_post_iceauth_api_v2_users_json_password_reset(user):
+def test_post_iceauth_api_v2_users_json_password_reset(user, caplog):
+    caplog.set_level(logger.INFO)
     expected_assert = 'Password Reset'
     user_name = user['username']
     logger.info("TEST: test post  call: ICEAUTH/api/v2/users/json/password/reset")
@@ -105,8 +80,8 @@ def test_post_iceauth_api_v2_users_json_password_reset(user):
     f"TEST:test get call ICEAUTH/api/v2/users/activate return payload:{api_info}"
 
 
-@pytest.mark.parametrize("user", user_delete())
-def test_delete_iceauth_api_v2_users(user):
+def test_delete_iceauth_api_v2_users(user, caplog):
+    caplog.set_level(logger.INFO)
     name = user['username']
     # import pdb
     #
@@ -122,3 +97,16 @@ def test_delete_iceauth_api_v2_users(user):
     # import pdb
     #
     # pdb.set_trace()
+
+
+def test_delete_iceauth_api_v2_users_json(user, caplog):
+    caplog.set_level(logger.INFO)
+    name = user['username']
+    expected_assert = 'User deleted'
+    logger.info("TEST: test delete  call: ICEAUTH/api/v2/users/json")
+    api_info = obj_auth.delete_iceauth_api_v2_users_json_helper(uid=name)
+    logger.debug(f"TEST: test delete call ICEAUTH/api/v2/users/json return payload: {api_info}")
+    actual_result = api_info['message']
+    assert expected_assert == actual_result, f"test failed to assert positive"
+    f"Expected assert: {expected_assert} but actual: {actual_result}"
+    f"TEST:test get call ICEAUTH/api/v2/users/json return payload:{api_info}"

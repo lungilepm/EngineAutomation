@@ -1,0 +1,53 @@
+{
+    "user": {
+        "username": "LUNGILEM",
+        "password": "3230Refilwe#1",
+        "mail": "lungilem@icetech.io",
+        "surname": "Motsweni",
+        "cellN": "0749953376",
+        "name": "Lungile",
+        "initials": "LP",
+        "userMetaData": {}
+    },
+    "env": {
+        "unallocated": "false",
+        "includeChildren": "true",
+        "force": "true",
+        "addRoles": "true",
+        "url": "http://ke-ntsa-mas.spsi.co.za/",
+        "realm": "/ke/ntsa/mas",
+        "roles_path": "resources\\logRoles",
+        "auth_token": null,
+        "organizationalUnit": "0",
+        "preferredLanguage": "en",
+        "grant_type": "password",
+        "client_id": "client",
+        "client_secret": "password",
+        "refresh_token": null,
+        "new_username": null,
+        "baseRoles": [
+            "SysAdmin",
+            "CFGTEMPLATE",
+            "System",
+            "AudAdmin",
+            "LookupAdmin",
+            "CFGADMIN",
+            "AuthAdmin",
+            "AppAdmin",
+            "CfgImporter",
+            "AuthUser"
+        ]
+    },
+    "agencies": [
+        "0",
+        "6000003",
+        "6000000"
+
+    ],
+
+    "db_user": {
+        "usernamedb": "LUNGILEMOTSWENI",
+        "passworddb": "3230Ayanda#1",
+        "dsn": "zayvdb08.spsi.co.za:1521/"
+    }
+}

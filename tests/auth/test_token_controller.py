@@ -7,7 +7,8 @@ baseRoles = ['AuthAdmin', 'SysAdmin', 'AudAdmin', 'CfgImporter', 'CFGADMIN', 'Lo
              'AuthUser', 'System']
 
 
-def test_post_iceauth_oauth_token():
+def test_post_iceauth_oauth_token(caplog):
+    caplog.set_level(logger.INFO)
     expected_assert = 'bearer'
     logger.info("TEST: test post  call: ICEAUTH/oauth/token")
     api_info = obj_auth.post_iceauth_oauth_token_helper()

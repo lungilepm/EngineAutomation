@@ -1,6 +1,8 @@
 import logging as logger
 import os
 
+import pytest
+
 from configs.hosts_config import INT_HOST
 from helpers.auth.TokenController import TokenController
 from utilities.genericUtilities import generate_username, write_to_text
@@ -13,6 +15,10 @@ class TokenControllerTwo(object):
         self.requests_utility = RequestsUtility()
         self.token_controller = TokenController()
         self.userName = []
+
+    @pytest.fixture(autouse=True)
+    def inject_fixtures(self, caplog):
+        self._caplog = caplog
 
     def post_iceauth_api_v2_users_json_helper(self, userMetaData=None, uid=None, surname=None, preferredLanguage=None,
                                               organizationalUnit=None, mail=None, initials=None, givenName=None,
@@ -49,7 +55,7 @@ class TokenControllerTwo(object):
             payload['surname'] = INT_HOST[os.environ.get('ENV', 'surname')]
 
         if not preferredLanguage:
-            payload['preferredLanguage'] = INT_HOST[os.environ.get('ENV', 'preferredLanguage')]
+            payload['preferredLanguage'] = INT_HOST[os.environ.get('ENV', 'language')]
 
         if not organizationalUnit:
             payload['organizationalUnit'] = INT_HOST[os.environ.get('ENV', 'organizationalUnit')]
@@ -76,9 +82,5 @@ class TokenControllerTwo(object):
         #import pdb
 
         #pdb.set_trace()
-        uid = response['data'][0]['uid']
-        password = response['data'][0]['userPassword']
-        '0'
-        strName = f"\"{uid}\", \"{password}\"\n"
-        write_to_text(file_path="resources\logRoles", to_write=strName, file_type="csv", mode="a")
+        logger.info(f"iceauth/api/v2/users/json, Response\n:{response}")
         return response

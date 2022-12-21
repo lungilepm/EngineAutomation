@@ -82,6 +82,17 @@ def find_index(mr_dict, content, element):
         if elem[element] == content:
             indices.append(i)
     indices = list(dict.fromkeys(indices))
+    # import pdb
+    #
+    # pdb.set_trace()
+    return indices
+
+
+def find_role(mr_dict):
+    indices = []
+    for i, elem in enumerate(mr_dict):
+        indices.append(i)
+    indices = list(dict.fromkeys(indices))
     return indices
 
 
@@ -165,6 +176,9 @@ def insert_kra_simba(environment):
         connection.commit()
     except oracledb.Error as Error:
         print(Error)
+
+
+
 
 # class TestDataManager:
 #     env = ["DEV", "INT", "MAS", "TST"]

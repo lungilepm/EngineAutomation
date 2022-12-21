@@ -7,7 +7,8 @@ baseRoles = ['AuthAdmin', 'SysAdmin', 'AudAdmin', 'CfgImporter', 'CFGADMIN', 'Lo
              'AuthUser', 'System']
 
 
-def test_post_iceauth_api_v2_users_json():
+def test_post_iceauth_api_v2_users_json(caplog):
+    caplog.set_level(logger.INFO)
     expected_assert = 'User created'
     logger.info("TEST: test post  call: iceauth/api/v2/users/json")
     api_info = obj_auth.post_iceauth_api_v2_users_json_helper()

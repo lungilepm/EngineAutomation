@@ -121,11 +121,13 @@ params = stripper(params)
 headers = stripper(headers)
 
 final = f"import os\n" \
-        f"from configs.hosts_config import INT_INFO\n" \
+        f"from helpers.auth.TokenController import TokenController\n"\
+        f"from utilities.requestsUtility import RequestsUtility\n"\
+        f"from configs.hosts_config import INT_HOST\n"\
         f"import logging as logger\n" \
         f"from tests.auth.test_token_controller import obj_auth\n\n\n" \
         f"def {name_helper}(self, {function_parameters}):\n" \
-        f"\tAuthorization = f\"Bearer {{self.post_iceauth_oauth_token_helper()['access_token']}}\"\n" \
+        f"\tAuthorization = f\"Bearer {{self.token_controller.post_iceauth_oauth_token_helper()['access_token']}}\"\n" \
         f"\n\t# The headers of the request \n" \
         f"\theaders = " \
         f"{{\n\t{headers}}}\n\n" \
@@ -139,8 +141,8 @@ final = f"import os\n" \
         f"\t{if_not}\n" \
         f"\tlogger.info(f\"Helper function for iceauth/api/v2/users/json Authentication: {{Authorization}}\\npayload :{{payload}}\\nparams :{{parameters}}\\nheaders :{{headers}}\")\n" \
         f"\tresponse = self.requests_utility.{call_type}(\'{test_end}\', payload=payload, headers=headers, params=parameters)\n" \
-        f"\treturn response\n\n" \
-        f"def {name_test_function}():\n" \
+        f"\tlogger.info(f\"ICEAUTH/api/v2/users/json, Response {{response}}\")\n\treturn response\n\n" \
+        f"def {name_test_function}(caplog):\n" \
         f"\texpected_assert = 'Listed results'\n" \
         f"\tlogger.info(\"TEST: test {call_type}  call: {test_end}\")\n" \
         f"\tapi_info = obj_auth.{name_helper}()\n" \

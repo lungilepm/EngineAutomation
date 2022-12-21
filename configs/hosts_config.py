@@ -17,9 +17,55 @@ def read_doc(file_path, file_type):
 
 def get_host():
     tun = dict
+    enviro = ["dev", "int", "mas", "tst"]
     option = read_doc("resources\envs", "json")
+    # This is the dev environment
+    if option[0]["doc"] == "dev_zw":
+        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_zw", "json")
+
+    if option[0]["doc"] == "dev_ke":
+        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_ke", "json")
+
+    if option[0]["doc"] == "dev_ca_ke":
+        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_ca_ke", "json")
+    if option[0]["doc"] == "dev_ca_zw":
+        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_ca_zw", "json")
+
+    # This is the int environment
     if option[0]["doc"] == "int_zw":
-        tun = read_doc("resources\int\int_zw", "json")
+        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_zw", "json")
+
+    if option[0]["doc"] == "int_ke":
+        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_ke", "json")
+
+    if option[0]["doc"] == "int_ca_ke":
+        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_ca_ke", "json")
+    if option[0]["doc"] == "int_ca_zw":
+        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_ca_zw", "json")
+
+    # This is the mas environment
+    if option[0]["doc"] == "mas_zw":
+        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_zw", "json")
+
+    if option[0]["doc"] == "mas_ke":
+        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_ke", "json")
+
+    if option[0]["doc"] == "mas_ca_ke":
+        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_ca_ke", "json")
+    if option[0]["doc"] == "mas_ca_zw":
+        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_ca_zw", "json")
+
+    # This is the tst environment
+    if option[0]["doc"] == "tst_zw":
+        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_zw", "json")
+
+    if option[0]["doc"] == "tst_ke":
+        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_ke", "json")
+
+    if option[0]["doc"] == "tst_ca_ke":
+        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_ca_ke", "json")
+    if option[0]["doc"] == "tst_ca_zw":
+        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_ca_zw", "json")
     # import pdb
     #
     # pdb.set_trace()
@@ -27,10 +73,16 @@ def get_host():
 
 
 INT_HOST = {
-    "unallocated": "false",
-    "includeChildren": "true",
-    "force": "true",
-    "addRoles": "true",
+    "exportPOE": [True, False],
+    "exportAuth": [True, False],
+    "excludeAgencyParents": [True, False],
+    "includeAgencyChildren": [True, False],
+    "exportMLCS": [True, False],
+    "exportENGINE": [True, False],
+    "unallocated": False,
+    "includeChildren": False,
+    "force": False,
+    "addRoles": True,
     "realm": get_host()['env']['realm'],
     "intzw": get_host()['env']['url'],
     "mail": "lungilem@icetech.io",
@@ -42,8 +94,8 @@ INT_HOST = {
     "name": 'Lungile',
     "initials": "LP",
     "organizationalUnit": "0",
-    "preferredLanguage": "en",
-    "agencies": ["0"],
+    "language": "en",
+    "agencies": get_host()['agencies'],
     "surname": 'Motsweni',
     "userMetaData": {},
     "baseRoles": ['SysAdmin', 'CFGTEMPLATE', 'System', 'AudAdmin', 'LookupAdmin', 'CFGADMIN', 'AuthAdmin', 'AppAdmin',

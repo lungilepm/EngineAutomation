@@ -21,11 +21,10 @@ def comp_id():
     for key in values:
         yield key
 
-    print(f"After the test: {values}")
-
 
 @pytest.mark.parametrize("comp", comp_id())
-def test_get_engine_rest_condition_findbycomponentid(comp):
+def test_get_engine_rest_condition_findbycomponentid(comp, caplog):
+    caplog.set_level(logger.INFO)
     expected_assert = 'b67b322c-4e3a-4a7e-8d48-f4e1f3cc8ae9'
     logger.info("TEST: test get  call: ENGINE/rest/condition/findByComponentId")
     api_info = obj_auth.get_engine_rest_condition_findbycomponentid_helper(componentGUID=comp)
