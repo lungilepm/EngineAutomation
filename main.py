@@ -22,8 +22,7 @@ def payload_maker(ray, flag_gem=False, ray2=None):
     return pay
 
 
-def return_reg(reg, the_line, oldsub=':', newsub='-', substitute=True, lowerCase=True, split=False):
-    regline = (regex.search(reg, the_line).group().strip())
+def return_reg(regline, oldsub=':', newsub='-', substitute=True, lowerCase=True, split=False):
     regline = regex.sub("\"", "", regline)
     regline = regex.sub(" ", "", regline)
     regline = regex.sub(",", "", regline)
@@ -42,24 +41,33 @@ def return_reg(reg, the_line, oldsub=':', newsub='-', substitute=True, lowerCase
     return regline
 
 
-def function_namer(reg, the_line):
-    test_end = return_reg(reg, the_line, "&", substitute=False, lowerCase=False,
-                          split=False)
-    call_type = return_reg("(?<=request).*.(?=\s')", the_line, substitute=False, lowerCase=True,
-                           split=False)
-    # call_type
-    name_test_function = "test_" + call_type + "_" + return_reg(reg, the_line, oldsub="/", newsub="_", substitute=True,
-                                                                lowerCase=True,
-                                                                split=False)
-    name_helper = call_type + "_" + return_reg(reg, the_line, oldsub="/", newsub="_", substitute=True,
-                                                                lowerCase=True,
-                                                                split=False)+"_"+"helper"
+def function_namer(lines):
+    test_end = lines
 
-    names = [test_end, call_type, name_test_function,  name_helper]
-    # import pdb
-    #
-    # pdb.set_trace()
+    # call_type
+    name_test_function = "test" + "_" + return_reg(lines, oldsub="/", newsub="_", substitute=True,
+                                                   lowerCase=True,
+                                                   split=False)
+
+    name_helper = return_reg(lines, oldsub="/", newsub="_", substitute=True,
+                             lowerCase=True,
+                             split=False) + "_" + "helper"
+    import pdb
+
+    pdb.set_trace()
+
+    names = [test_end, name_test_function, name_helper]
+
     return names
+
+
+def reg_return(reg, the_line):
+    reg_line = (regex.search(reg, the_line).group().strip())
+    return reg_line
+
+
+def type_of_call(reg, linene):
+    lines = regex.search(reg, linene)
 
 
 fpath = "resources\oauth_token"
@@ -74,11 +82,16 @@ file_content = file1.readlines()
 headers = ""
 params = ""
 array2 = []
+namer = []
 for line in file_content:
     # Creating parameters payload
     if regex.search("\?", line):
-        tempar = return_reg("(?<=\?).*.(?=')", line, "&", substitute=False, lowerCase=True,
+        the_reg = reg_return("(?<=\?).*.(?=')", line)
+        tempar = return_reg(the_reg, "&", substitute=False, lowerCase=True,
                             split=True)  # parameters such as token?grant_type=password&client_id=
+        # import pdb
+        #
+        # pdb.set_trace()
         for x in tempar:
             para = regex.split("=", x)
             params = payload_maker(para[0], False) + params
@@ -87,19 +100,25 @@ for line in file_content:
 
     # Creating endpoints and function names
     if regex.search("curl", line) and regex.search("\?", line):
-        namer = function_namer("(?<=\.za/).*.(?=\?)", line)
-        test_end = namer[0]
-        call_type = namer[1]
-        name_test_function = namer[2]
-        name_helper = namer[3]
+        the_reg = reg_return("(?<=\.za/).*.(?=\?)", line)
+        namer = function_namer(the_reg)
+
 
     elif regex.search("curl", line):
-        namer = function_namer("(?<=\.za/).*.(?=')", line)
-        test_end = namer[0]
-        call_type = namer[1]
-        name_test_function = namer[2]
-        name_helper = namer[3]
+        rege = "(?<=\.za/).*.(?=')"
+        the_reg = reg_return(rege, line)
+        call_type = "post"
+        namer = function_namer(the_reg)
+        # import pdb
+        #
+        # pdb.set_trace()
+        # test_end = namer[0]
+        # name_test_function = namer[1]
+        # name_helper = namer[2]
 
+    test_end = namer[0]
+    name_test_function = namer[1]
+    name_helper = namer[2]
     # Creating headers payload
     if regex.search("header", line):
         # headers['compress_token'] = 'true'
@@ -109,7 +128,8 @@ for line in file_content:
 
     # creating headers body parameters and function parameters
     if regex.search("\"", line):
-        array1 = return_reg("(?<=\").*.", line, substitute=True, lowerCase=True, split=True)
+        the_reg = reg_return("(?<=\").*.", line)
+        array1 = return_reg(the_reg, substitute=True, lowerCase=True, split=True)
         function_parameters = f"{array1[0]}=None," + function_parameters
         parameters_payload = payload_maker(array1[0], False) + parameters_payload
 
@@ -121,9 +141,9 @@ params = stripper(params)
 headers = stripper(headers)
 
 final = f"import os\n" \
-        f"from helpers.auth.TokenController import TokenController\n"\
-        f"from utilities.requestsUtility import RequestsUtility\n"\
-        f"from configs.hosts_config import INT_HOST\n"\
+        f"from helpers.auth.TokenController import TokenController\n" \
+        f"from utilities.requestsUtility import RequestsUtility\n" \
+        f"from configs.hosts_config import INT_HOST\n" \
         f"import logging as logger\n" \
         f"from tests.auth.test_token_controller import obj_auth\n\n\n" \
         f"def {name_helper}(self, {function_parameters}):\n" \
@@ -146,7 +166,7 @@ final = f"import os\n" \
         f"\texpected_assert = 'Listed results'\n" \
         f"\tlogger.info(\"TEST: test {call_type}  call: {test_end}\")\n" \
         f"\tapi_info = obj_auth.{name_helper}()\n" \
-        f"\tlogger.debug(f\"TEST: test {call_type} call {test_end} return payload: {{api_info}}\")\n" \
+        f"\tlogger.info(f\"TEST: test {call_type} call {test_end} return payload: {{api_info}}\")\n" \
         f"\tactual_result = api_info['message']\n" \
         f"\tassert expected_assert == actual_result, f\"test failed to assert positive\"\n" \
         f"\tf\"Expected assert: {{expected_assert}} but actual: {{actual_result}}\"\n" \

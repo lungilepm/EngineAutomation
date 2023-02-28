@@ -1,403 +1,1671 @@
-:: #################Engine API Automation Test Run ###################################################################################
-:: Author: Lungile Pearl Motsweni SQE ICETECH
-::pytest --last-failed																					 #
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::::::::::Tests script for dev environment:::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Test run for dev zw environment
-::cd C:\PycharmProjects\EngineAutomation\resources
-::echo [{"doc": "dev_zw","env": "dev"}] > envs.json
-::cd C:\PycharmProjects\EngineAutomation
-::pytest --html=reports/dev/dev_zw_report.html
-
 :: Test run for dev ke environment
 cd C:\PycharmProjects\EngineAutomation\resources
 echo [{"doc": "dev_ke","env": "dev"}] > envs.json
 cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-
-:: Test run for dev ca ke environment
-::cd C:\PycharmProjects\EngineAutomation\resources
-::echo [{"doc": "dev_ca_ke","env": "dev"}] > envs.json
-::cd C:\PycharmProjects\EngineAutomation
-::pytest --html=reports/dev/dev_ca_ke_report.html
-
-:::::::::::::::::::::::::::::::::::::::::::::::Tests script for int environment:::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:: Test run for int ca ke environment
-cd C:\PycharmProjects\EngineAutomation\resources
-echo [{"doc": "int_ca_ke","env": "int"}] > envs.json
-cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
+pytest --html=reports/dev/dev_ke_report.html
 
 :: Test run for int ke environment
 cd C:\PycharmProjects\EngineAutomation\resources
 echo [{"doc": "int_ke","env": "int"}] > envs.json
 cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
+pytest --html=reports/int/int_ke_report.html
 
 :: Test run for int zw environment
 cd C:\PycharmProjects\EngineAutomation\resources
 echo [{"doc": "int_zw","env": "int"}] > envs.json
 cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-
-:::::::::::::::::::::::::::::::::::::::::::::::Tests script for mas environment:::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Test run for mas zw environment
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
 cd C:\PycharmProjects\EngineAutomation\resources
-echo [{"doc": "mas_zw","env": "mas"}] > envs.json
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
 cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-
-:: Test run for mas ke environment
-cd C:\PycharmProjects\EngineAutomation\resources
-echo [{"doc": "mas_ke","env": "mas"}] > envs.json
-cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-
-:: Test run for mas ca ke environment
-cd C:\PycharmProjects\EngineAutomation\resources
-echo [{"doc": "mas_ca_ke","env": "mas"}] > envs.json
-cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
+pytest --html=reports/dev/dev_ke_report.html
 
 :: Test run for int ke environment
 cd C:\PycharmProjects\EngineAutomation\resources
 echo [{"doc": "int_ke","env": "int"}] > envs.json
 cd C:\PycharmProjects\EngineAutomation
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
-pytest tests\auth\test_user_controller_two.py -k test_delete_iceauth_api_v2_users_json
+pytest --html=reports/int/int_ke_report.html
 
 :: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
 
-:::::::::::::::::::::::::::::::::::::::::::::::Tests script for tst environment:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
 
-timeout 1000
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
 
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html
+:: Test run for dev ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "dev_ke","env": "dev"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/dev/dev_ke_report.html
+
+:: Test run for int ke environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_ke","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_ke_report.html
+
+:: Test run for int zw environment
+cd C:\PycharmProjects\EngineAutomation\resources
+echo [{"doc": "int_zw","env": "int"}] > envs.json
+cd C:\PycharmProjects\EngineAutomation
+pytest --html=reports/int/int_zw_report.html

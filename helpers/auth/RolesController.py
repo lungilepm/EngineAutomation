@@ -21,7 +21,7 @@ class RolesController(object):
         self.token_controller = TokenController()
         self.userName = []
 
-    def post_iceauth_api_roles_addusertorole_helper(self, uid=None, roleName=None, clearCache=True, agencyId=None):
+    def post_iceauth_api_roles_addusertorole_helper(self, uid=None, roleName=None, agencyId=None):
         Authorization = f"Bearer {self.token_controller.post_iceauth_oauth_token_helper()['access_token']}"
 
         # The headers of the request
@@ -32,7 +32,6 @@ class RolesController(object):
         parameters = {
             'uid': uid,
             'roleName': roleName,
-            'clearCache': True,
             'agencyId': agencyId}
 
         # The request payload of post_iceauth_api_roles_addusertorole_helper
@@ -41,21 +40,19 @@ class RolesController(object):
 
         # Default values to be used
         if not uid:
-            parameters['uid'] = INT_HOST[os.environ.get('ENV', 'username')]
+            parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         if not roleName:
             parameters['roleName'] = INT_HOST[os.environ.get('ENV', 'roleName')]
 
-        if not clearCache:
-            parameters['clearCache'] = INT_HOST[os.environ.get('ENV', 'clearCache')]
-
         if not agencyId:
             parameters['agencyId'] = INT_HOST[os.environ.get('ENV', 'agencyId')]
 
-        logger.info(f"Helper function for ICEAUTH/api/roles/addUserToRole payload :{payload}")
+        logger.info(
+            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
         response = self.requests_utility.post('ICEAUTH/api/roles/addUserToRole', payload=payload, headers=headers,
-                                              params=parameters, expected_status_code=201)
-        logger.info(f"Response function for ICEAUTH/api/roles/addUserToRole payload :{response}")
+                                              params=parameters,expected_status_code=201)
+        logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
         return response
 
     def get_iceauth_api_v2_users_helper(self, uid=None):

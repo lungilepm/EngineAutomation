@@ -69,7 +69,7 @@ class RequestsUtility(object):
         self.status_code = int(rs_api.status_code)
         self.assert_status_code()
         if not loot:
-            self.rs_json = {"statusCode", self.status_code}
+            self.rs_json = {"statusCode": self.status_code}
         else:
             self.rs_json = rs_api.json()
             logger.debug(f"return payload for post '{endpoint}'\n{self.rs_json}")
@@ -97,6 +97,33 @@ class RequestsUtility(object):
         self.assert_status_code()
         if not loot:
             self.rs_json = {"statusCode", self.status_code}
+        else:
+            self.rs_json = rs_api.json()
+            logger.debug(f"return payload for post '{endpoint}'\n{self.rs_json}")
+        return self.rs_json
+
+    def put(self, endpoint, payload=None, expected_status_code=200, headers=None, params=None):
+
+        if not headers:
+            headers = {"Content-Type": "application/json",
+                       "Accept": "*/*",
+                       'compress_token': 'true'
+                       }
+
+        logger.debug(f"get auth token for '{endpoint}'")
+
+        self.url = self.base_url + endpoint
+
+        request = json.dumps(payload)
+
+        rs_api = requests.put(url=self.url, data=request, headers=headers, params=params)
+        loot = rs_api.text
+        logger.debug(f"Direct response: '{endpoint}'\n{loot}")
+        self.expected_status_code = expected_status_code
+        self.status_code = int(rs_api.status_code)
+        self.assert_status_code()
+        if not loot:
+            self.rs_json = {"statusCode": self.status_code}
         else:
             self.rs_json = rs_api.json()
             logger.debug(f"return payload for post '{endpoint}'\n{self.rs_json}")

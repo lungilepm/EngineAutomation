@@ -21,51 +21,51 @@ def get_host():
     option = read_doc("resources\envs", "json")
     # This is the dev environment
     if option[0]["doc"] == "dev_zw":
-        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_zw", "json")
+        tun = read_doc("resources\\" + enviro[0] + "\\" + enviro[0] + "_zw", "json")
 
     if option[0]["doc"] == "dev_ke":
-        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_ke", "json")
+        tun = read_doc("resources\\" + enviro[0] + "\\" + enviro[0] + "_ke", "json")
 
     if option[0]["doc"] == "dev_ca_ke":
-        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_ca_ke", "json")
+        tun = read_doc("resources\\" + enviro[0] + "\\" + enviro[0] + "_ca_ke", "json")
     if option[0]["doc"] == "dev_ca_zw":
-        tun = read_doc("resources\\" + enviro[0] + "\\"+enviro[0]+"_ca_zw", "json")
+        tun = read_doc("resources\\" + enviro[0] + "\\" + enviro[0] + "_ca_zw", "json")
 
     # This is the int environment
     if option[0]["doc"] == "int_zw":
-        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_zw", "json")
+        tun = read_doc("resources\\" + enviro[1] + "\\" + enviro[1] + "_zw", "json")
 
     if option[0]["doc"] == "int_ke":
-        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_ke", "json")
+        tun = read_doc("resources\\" + enviro[1] + "\\" + enviro[1] + "_ke", "json")
 
     if option[0]["doc"] == "int_ca_ke":
-        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_ca_ke", "json")
+        tun = read_doc("resources\\" + enviro[1] + "\\" + enviro[1] + "_ca_ke", "json")
     if option[0]["doc"] == "int_ca_zw":
-        tun = read_doc("resources\\" + enviro[1] + "\\"+enviro[1]+"_ca_zw", "json")
+        tun = read_doc("resources\\" + enviro[1] + "\\" + enviro[1] + "_ca_zw", "json")
 
     # This is the mas environment
     if option[0]["doc"] == "mas_zw":
-        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_zw", "json")
+        tun = read_doc("resources\\" + enviro[2] + "\\" + enviro[2] + "_zw", "json")
 
     if option[0]["doc"] == "mas_ke":
-        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_ke", "json")
+        tun = read_doc("resources\\" + enviro[2] + "\\" + enviro[2] + "_ke", "json")
 
     if option[0]["doc"] == "mas_ca_ke":
-        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_ca_ke", "json")
+        tun = read_doc("resources\\" + enviro[2] + "\\" + enviro[2] + "_ca_ke", "json")
     if option[0]["doc"] == "mas_ca_zw":
-        tun = read_doc("resources\\" + enviro[2] + "\\"+enviro[2]+"_ca_zw", "json")
+        tun = read_doc("resources\\" + enviro[2] + "\\" + enviro[2] + "_ca_zw", "json")
 
     # This is the tst environment
     if option[0]["doc"] == "tst_zw":
-        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_zw", "json")
+        tun = read_doc("resources\\" + enviro[3] + "\\" + enviro[3] + "_zw", "json")
 
     if option[0]["doc"] == "tst_ke":
-        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_ke", "json")
+        tun = read_doc("resources\\" + enviro[3] + "\\" + enviro[3] + "_ke", "json")
 
     if option[0]["doc"] == "tst_ca_ke":
-        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_ca_ke", "json")
+        tun = read_doc("resources\\" + enviro[3] + "\\" + enviro[3] + "_ca_ke", "json")
     if option[0]["doc"] == "tst_ca_zw":
-        tun = read_doc("resources\\" + enviro[3] + "\\"+enviro[3]+"_ca_zw", "json")
+        tun = read_doc("resources\\" + enviro[3] + "\\" + enviro[3] + "_ca_zw", "json")
     # import pdb
     #
     # pdb.set_trace()
@@ -99,7 +99,7 @@ INT_HOST = {
     "surname": 'Motsweni',
     "userMetaData": {},
     "baseRoles": ['SysAdmin', 'CFGTEMPLATE', 'System', 'AudAdmin', 'LookupAdmin', 'CFGADMIN', 'AuthAdmin', 'AppAdmin',
-                  'CfgImporter', 'AuthUser'],
+                  'CfgImporter', 'AuthUser', 'SUPERVISOR', 'TestRole'],
     "grant_type": 'password',
     "client_id": 'client',
     "client_secret": 'password',

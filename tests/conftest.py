@@ -24,15 +24,11 @@ export_engine = INT_HOST[os.environ.get('ENV', "exportENGINE")]
 unallocated = INT_HOST[os.environ.get('ENV', "unallocated")]
 include_children = INT_HOST[os.environ.get('ENV', "includeChildren")]
 force = INT_HOST[os.environ.get('ENV', "force")]
-add_roles = INT_HOST[os.environ.get('ENV', "addRoles")]
+add_roles = INT_HOST[os.environ.get('ENV', "baseRoles")]
 
 
 def create_user():
     written = []
-    cre = obj_roles2.post_iceauth_api_v2_users_json_helper()
-    logger.info(f"\n Create new user using post : ICEAUTH/api/v2/users/json\n{cre}")
-    username = cre['data'][0]['uid']
-    written = [{'username': username, 'password': None}]
     logger.info("TEST: test get  call: ICEAUTH/api/users/getUsersForAgency/0")
     api_info = obj_roles.get_iceauth_api_users_getusersforagency_helper()
     logger.debug(f"TEST: test get call ICEAUTH/api/users/getUsersForAgency/0 return payload: {api_info[0]}")
@@ -56,13 +52,40 @@ def create_user():
         if use in api_info['data'][0]:
             dict_temp = {'username': use, 'password': passw}
             written.append(dict_temp)
-    print(f"the way: {written}")
+
+    logger.info(f"User info: {written}")
     for j, key in enumerate(written):
         yield key
 
 
+def create_role_agency_id():
+    logger.info("TEST: test get  call: ICEAUTH/api/roles/getAllRoles")
+    for i, agency in enumerate(agencies):
+        api_info = obj_auth.get_iceauth_api_roles_getallroles_helper(agencyId=agency)
+        for key in api_info:
+            yield {'role': key, 'agency': agency}
+
+
 @pytest.fixture(params=create_user())
 def user(request, caplog):
+    # import pdb
+    #
+    # pdb.set_trace()
+    caplog.set_level(logger.INFO)
+    yield request.param
+
+
+@pytest.fixture(params=add_roles)
+def role(request, caplog):
+    # import pdb
+    #
+    # pdb.set_trace()
+    caplog.set_level(logger.INFO)
+    yield request.param
+
+
+@pytest.fixture(params=create_role_agency_id())
+def role_agency_id(request, caplog):
     # import pdb
     #
     # pdb.set_trace()
@@ -122,14 +145,6 @@ def export_engine_fix(request, caplog):
 def role_agency(request, caplog):
     caplog.set_level(logger.INFO)
     yield request.param
-
-
-@pytest.fixture()
-def one_user():
-    cre = obj_roles2.post_iceauth_api_v2_users_json_helper()
-    username = cre['data'][0]['uid']
-    password = cre['data'][0]['userPassword']
-    yield {'username': username, 'password': password}
 
 
 @pytest.fixture()

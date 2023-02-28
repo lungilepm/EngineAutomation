@@ -1,7 +1,7 @@
 {
     "user": {
-        "username": "LUNGILEPM",
-        "password": "3230Ayanda@1",
+        "username": "lungilem",
+        "password": "5744Pearl@1",
         "mail": "lungilem@icetech.io",
         "surname": "Motsweni",
         "cellN": "0749953376",
@@ -40,9 +40,9 @@
     },
     "agencies": [
         "0",
+		"6000001",
         "6000003",
         "6000000"
-
     ],
 
     "db_user": {
