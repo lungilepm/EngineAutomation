@@ -54,7 +54,8 @@ class ChangePasswordPage(object):
         return self.driver
 
     def click_cancel(self):
-        self.cancel_submit_.click()
+        if self.cancel_submit_.is_displayed():
+            self.cancel_submit_.click()
         logger.info(f"Login click to submit")
         return self.driver
 

@@ -1,5 +1,6 @@
 import os
 import logging as logger
+from time import sleep
 
 from selenium.webdriver.common.by import By
 
@@ -35,7 +36,9 @@ class LoginPage(object):
 
     def click_login(self):
         logger.info(f"Login click to submit")
-        self.login_submit_.click()
+        if self.login_submit_.is_displayed():
+            self.login_submit_.click()
+
         return self.driver
 
     def set_login_details(self, str_username=None, str_password=None):
@@ -62,7 +65,7 @@ class LoginPage(object):
         self.set_login_details(str_username, str_password)
         change_password = "//*[text()=' Change Password ']"
         change_password_submit_ = self.driver.find_element(By.XPATH, change_password)
-        change_password_submit_ .click()
+        if change_password_submit_.is_displayed():
+            change_password_submit_.click()
+
         return self.driver
-
-

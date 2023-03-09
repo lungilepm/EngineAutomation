@@ -1,6 +1,7 @@
 import logging as logger
 import os
 
+
 from configs.hosts_config import INT_HOST
 from utilities.requestsUtility import RequestsUtility
 
