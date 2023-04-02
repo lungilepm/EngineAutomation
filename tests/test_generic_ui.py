@@ -1,7 +1,6 @@
 import pytest
 
 from helpers.bomui.BOMHeaderPage import BOMHeaderPage
-from helpers.genericui.ChangePassowrdPage import ChangePasswordPage
 from helpers.genericui.LoginPage import LoginPage
 from utilities.genericUtilities import *
 

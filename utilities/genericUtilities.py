@@ -177,9 +177,7 @@ def insert_kra_simba(environment):
     except oracledb.Error as Error:
         print(Error)
 
-
-
-
+#
 # class TestDataManager:
 #     env = ["DEV", "INT", "MAS", "TST"]
 #     for x in env:

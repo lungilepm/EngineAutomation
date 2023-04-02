@@ -48,10 +48,10 @@ class TokenController(object):
         if not realm:
             headers['realm'] = INT_HOST[os.environ.get('ENV', 'realm')]
 
-        logger.info(f"Helper function for iceauth/api/v2/users/json Authentication: \npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+        # logger.info(f"Helper function for iceauth/api/v2/users/json Authentication: \npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
 
-        response = self.requests_utility.post('ICEAUTH/oauth/token', headers=headers,
-                                              params=parameters, payload=payload)
+        response = self.requests_utility.post('ICEAUTH/oauth/token', payload=payload, headers=headers,
+                                              params=parameters)
         return response
 
     def post_iceauth_oauth_token_helper(self, uSub=None, otp=None, refresh_token=None, password=None,
@@ -109,7 +109,7 @@ class TokenController(object):
         if not realm:
             headers['realm'] = INT_HOST[os.environ.get('ENV', 'realm')]
 
-        logger.info(f"Helper function for ICEAUTH/oauth/token payload :{payload} \nheaders: {headers}\nparams: {parameters}")
+        # logger.info(f"Helper function for ICEAUTH/oauth/token payload :{payload} \nheaders: {headers}\nparams: {parameters}")
         response = self.requests_utility.post('ICEAUTH/oauth/token', payload=payload, headers=headers,
                                               params=parameters)
         return response

@@ -99,7 +99,7 @@ INT_HOST = {
     "surname": 'Motsweni',
     "userMetaData": {},
     "baseRoles": ['SysAdmin', 'CFGTEMPLATE', 'System', 'AudAdmin', 'LookupAdmin', 'CFGADMIN', 'AuthAdmin', 'AppAdmin',
-                  'CfgImporter', 'AuthUser', 'SUPERVISOR', 'TestRole'],
+                  'CfgImporter', 'AuthUser', 'MaintainAccReg'],
     "grant_type": 'password',
     "client_id": 'client',
     "client_secret": 'password',

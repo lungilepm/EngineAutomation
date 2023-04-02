@@ -103,7 +103,7 @@ class UserControllerV2(object):
             payload['cellN'] = INT_HOST[os.environ.get('ENV', 'cellN')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json Authentication: \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json', payload=payload, headers=headers,
                                               params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response\n:{response}")
@@ -263,7 +263,7 @@ class UserControllerV2(object):
             parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.delete('ICEAUTH/api/v2/users', payload=payload, headers=headers,
                                                 params=parameters)
         logger.info(f"ICEAUTH/api/v2/users, Response\n:{response}")
@@ -289,7 +289,7 @@ class UserControllerV2(object):
             parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/deactivate', payload=payload, headers=headers,
                                               params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -317,7 +317,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json/password/reset', payload=payload,
                                               headers=headers, params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json/password/reset, Response\n:{response}")
@@ -344,7 +344,7 @@ class UserControllerV2(object):
             parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.get('ICEAUTH/api/v2/users/find', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -372,7 +372,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.delete('ICEAUTH/api/v2/users/json', payload=payload, headers=headers,
                                                 params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -400,7 +400,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.get('ICEAUTH/api/v2/users/json', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -467,7 +467,7 @@ class UserControllerV2(object):
             payload['cellN'] = INT_HOST[os.environ.get('ENV', 'cellN')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.put('ICEAUTH/api/v2/users/json', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response\n:{response}")
@@ -495,7 +495,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.get('ICEAUTH/api/v2/users/json/anonymous', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -523,7 +523,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json/anonymous', payload=payload, headers=headers,
                                               params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -551,7 +551,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json/activate', payload=payload, headers=headers,
                                               params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -579,7 +579,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.get('ICEAUTH/api/v2/users/json/find', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -607,7 +607,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json/lock', payload=payload, headers=headers,
                                               params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -635,7 +635,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json/password/resetRequest', payload=payload,
                                               headers=headers, params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -662,7 +662,7 @@ class UserControllerV2(object):
             parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.get('ICEAUTH/api/v2/users/userRoles', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -693,7 +693,7 @@ class UserControllerV2(object):
             parameters['addRoles'] = INT_HOST[os.environ.get('ENV', 'addRoles')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.get('ICEAUTH/api/v2/users/search', payload=payload, headers=headers,
                                              params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -719,7 +719,7 @@ class UserControllerV2(object):
             parameters['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/lock', payload=payload, headers=headers,
                                               params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
@@ -747,7 +747,7 @@ class UserControllerV2(object):
             payload['uid'] = INT_HOST[os.environ.get('ENV', 'uid')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+            f"Helper function for iceauth/api/v2/users/json \npayload :\n\t{payload}\nparams :\n\t{parameters}\nheaders :\n\t{headers}")
         response = self.requests_utility.post('ICEAUTH/api/v2/users/json/password/update', payload=payload,
                                               headers=headers, params=parameters)
         logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")

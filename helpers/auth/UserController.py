@@ -3,7 +3,6 @@ import os
 
 from configs.hosts_config import INT_HOST
 from helpers.auth.TokenController import TokenController
-from utilities.genericUtilities import generate_username
 from utilities.requestsUtility import RequestsUtility
 
 logger.getLogger('faker').setLevel(logger.ERROR)

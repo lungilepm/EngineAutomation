@@ -19,4 +19,3 @@ def test_get_iceauth_api_users_getusersforagency(caplog):
     logger.debug(f"TEST: test get call ICEAUTH/api/users/getUsersForAgency/0 return payload: {api_info[0]}")
     assert expected_assert in api_info[0], f"test failed to assert positive" \
                                            f"Expected assert:{expected_assert} but actual does not exist"
-

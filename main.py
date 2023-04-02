@@ -52,9 +52,9 @@ def function_namer(lines):
     name_helper = return_reg(lines, oldsub="/", newsub="_", substitute=True,
                              lowerCase=True,
                              split=False) + "_" + "helper"
-    import pdb
-
-    pdb.set_trace()
+    # import pdb
+    #
+    # pdb.set_trace()
 
     names = [test_end, name_test_function, name_helper]
 
@@ -159,9 +159,10 @@ final = f"import os\n" \
         f"{{\n\t{parameters_payload}}}\n\n" \
         f"\t# Default values to be used\n" \
         f"\t{if_not}\n" \
-        f"\tlogger.info(f\"Helper function for iceauth/api/v2/users/json Authentication: {{Authorization}}\\npayload :{{payload}}\\nparams :{{parameters}}\\nheaders :{{headers}}\")\n" \
+        f"\tlogger.info(f\"Helper function for iceauth/api/v2/users/json Authentication:\n\t {{Authorization}}\n\tpayload :\n\t{{payload}}\n\tparams :\n\t{{parameters}}\\n\theaders :\n\t{{headers}}\")\n" \
         f"\tresponse = self.requests_utility.{call_type}(\'{test_end}\', payload=payload, headers=headers, params=parameters)\n" \
-        f"\tlogger.info(f\"ICEAUTH/api/v2/users/json, Response {{response}}\")\n\treturn response\n\n" \
+        f"\twith caplog.at_level(logger.DEBUG):"\
+        f"\t\tlogger.info(f\"ICEAUTH/api/v2/users/json, Response \n\t{{response}}\")\n\treturn response\n\n" \
         f"def {name_test_function}(caplog):\n" \
         f"\texpected_assert = 'Listed results'\n" \
         f"\tlogger.info(\"TEST: test {call_type}  call: {test_end}\")\n" \

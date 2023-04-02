@@ -46,13 +46,13 @@ class RolesController(object):
             parameters['roleName'] = INT_HOST[os.environ.get('ENV', 'roleName')]
 
         if not agencyId:
-            parameters['agencyId'] = INT_HOST[os.environ.get('ENV', 'agencyId')]
+            parameters['agencyId'] = INT_HOST[os.environ.get('ENV', 'organizationalUnit')]
 
         logger.info(
-            f"Helper function for iceauth/api/v2/users/json Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
-        response = self.requests_utility.post('ICEAUTH/api/roles/addUserToRole', payload=payload, headers=headers,
-                                              params=parameters,expected_status_code=201)
-        logger.info(f"ICEAUTH/api/v2/users/json, Response {response}")
+            f"Helper function for ICEAUTH/api/roles/addUserToRole Authentication: {Authorization}\npayload :{payload}\nparams :{parameters}\nheaders :{headers}")
+        response = self.requests_utility.post('ICEAUTH/api/roles/addUserToRole', payload=payload,
+                                              expected_status_code=201, headers=headers, params=parameters)
+        logger.info(f"ICEAUTH/api/roles/addUserToRole, Response {response}")
         return response
 
     def get_iceauth_api_v2_users_helper(self, uid=None):

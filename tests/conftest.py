@@ -28,38 +28,21 @@ add_roles = INT_HOST[os.environ.get('ENV', "baseRoles")]
 
 
 def create_user():
+    username1 = 'Lungile Pearl Motsweni'
+    username2 = 'Lungilepm'
     written = []
-    logger.info("TEST: test get  call: ICEAUTH/api/users/getUsersForAgency/0")
-    api_info = obj_roles.get_iceauth_api_users_getusersforagency_helper()
-    logger.debug(f"TEST: test get call ICEAUTH/api/users/getUsersForAgency/0 return payload: {api_info[0]}")
-    ind_num = find_index(api_info, 'LP', element='initials')
-    logger.info(f"\n Number of users: {ind_num} ")
-
-    for i, elem in enumerate(ind_num):
-        print(f"the way: {written}")
-        use = api_info[elem]['uid']
-        dict_temp = {'username': use, 'password': api_info[elem]['userPassword']}
-        written.append(dict_temp)
-    # Load more
-
-    api_info = obj_roles2.get_iceauth_api_v2_users_json_getusersforagency_helper(agencyId='0')
-    logger.info(f"\n All user for the test case:\n{api_info}")
-    ind_num = find_index(api_info['data'][0], 'LP', element='initials')
-    for i, elem in enumerate(ind_num):
-
-        use = api_info['data'][0][elem]['uid']
-        passw = api_info['data'][0][elem]['userPassword']
-        if use in api_info['data'][0]:
-            dict_temp = {'username': use, 'password': passw}
-            written.append(dict_temp)
-
+    dict_temp1 = {'username': username1, 'password': ''}
+    obj_roles2.post_iceauth_api_v2_users_json_helper(uid=username1)
+    dict_temp2 = {'username': username2, 'password': ''}
+    obj_roles2.post_iceauth_api_v2_users_json_helper(uid=username2)
+    written.append(dict_temp1)
+    written.append(dict_temp2)
     logger.info(f"User info: {written}")
     for j, key in enumerate(written):
         yield key
 
 
-def create_role_agency_id():
-    logger.info("TEST: test get  call: ICEAUTH/api/roles/getAllRoles")
+def create_role():
     for i, agency in enumerate(agencies):
         api_info = obj_auth.get_iceauth_api_roles_getallroles_helper(agencyId=agency)
         for key in api_info:
@@ -84,7 +67,7 @@ def role(request, caplog):
     yield request.param
 
 
-@pytest.fixture(params=create_role_agency_id())
+@pytest.fixture(params=create_role())
 def role_agency_id(request, caplog):
     # import pdb
     #
@@ -93,58 +76,58 @@ def role_agency_id(request, caplog):
     yield request.param
 
 
-def create_base():
-    for i, tem in enumerate(agencies):
-        agency = tem
-        api_info = obj_auth.get_iceauth_api_roles_getallroles_helper(agencyId=agency)
-        for j, key in enumerate(api_info):
-            temp = {'agency': agency, 'role': key}
-            # import pdb
-            #
-            # pdb.set_trace()
-            yield temp
-
-
-@pytest.fixture(params=export_poe)
-def export_poe_fix(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
-
-
-@pytest.fixture(params=export_auth)
-def export_auth_fix(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
-
-
-@pytest.fixture(params=exclude_agency_parents)
-def exclude_agency_parents_fix(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
-
-
-@pytest.fixture(params=include_agency_children)
-def include_agency_children_fix(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
-
-
-@pytest.fixture(params=export_mlcs)
-def export_mlcs_fix(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
-
-
-@pytest.fixture(params=export_engine)
-def export_engine_fix(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
-
-
-@pytest.fixture(params=create_base())
-def role_agency(request, caplog):
-    caplog.set_level(logger.INFO)
-    yield request.param
+# def create_base():
+#     for i, tem in enumerate(agencies):
+#         agency = tem
+#         api_info = obj_auth.get_iceauth_api_roles_getallroles_helper(agencyId=agency)
+#         for j, key in enumerate(api_info):
+#             temp = {'agency': agency, 'role': key}
+#             # import pdb
+#             #
+#             # pdb.set_trace()
+#             yield temp
+#
+#
+# @pytest.fixture(params=export_poe)
+# def export_poe_fix(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
+#
+#
+# @pytest.fixture(params=export_auth)
+# def export_auth_fix(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
+#
+#
+# @pytest.fixture(params=exclude_agency_parents)
+# def exclude_agency_parents_fix(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
+#
+#
+# @pytest.fixture(params=include_agency_children)
+# def include_agency_children_fix(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
+#
+#
+# @pytest.fixture(params=export_mlcs)
+# def export_mlcs_fix(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
+#
+#
+# @pytest.fixture(params=export_engine)
+# def export_engine_fix(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
+#
+#
+# @pytest.fixture(params=create_base())
+# def role_agency(request, caplog):
+#     caplog.set_level(logger.INFO)
+#     yield request.param
 
 
 @pytest.fixture()
@@ -155,11 +138,11 @@ def get_driver(caplog):
     return driver
 
 
-@pytest.fixture()
-def driver_login(get_driver, caplog):
-    drive = request.param
-    drive.get(base_url + "BOMUI/#!/login")
-    loginObj = LoginPage(drive)
-    api_info = loginObj.login_to_app()
-    logger.info("login to the application")
-    yield api_info
+# @pytest.fixture()
+# def driver_login(get_driver, caplog):
+#     drive = request.param
+#     drive.get(base_url + "BOMUI/#!/login")
+#     loginObj = LoginPage(drive)
+#     api_info = loginObj.login_to_app()
+#     logger.info("login to the application")
+#     yield api_info
