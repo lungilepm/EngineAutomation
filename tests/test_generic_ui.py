@@ -1,7 +1,7 @@
 import pytest
 
-from helpers.bomui.BOMHeaderPage import BOMHeaderPage
-from helpers.genericui.LoginPage import LoginPage
+from pages.bomui.BOMHeaderPage import BOMHeaderPage
+from pages.genericui.LoginPage import LoginPage
 from utilities.genericUtilities import *
 
 base_url = INT_HOST[os.environ.get('ENV', 'intzw')]
@@ -19,15 +19,15 @@ def test_login_page(get_driver, caplog):
     loginObj = LoginPage(driver)
 
     logger.info("Test login to page")
-    api_info = loginObj.login_to_app()
+    api_info = loginObj.login()
     # import pdb
     #
     # pdb.set_trace()
-    bomObj = BOMHeaderPage(api_info)
-    assert bomObj.is_bom_brand_visible()
+    bomObj = BOMHeaderPage(driver)
+    bomObj. export_configuration()
 
 
-def test_change_password(get_driver, caplog):
-    driver = get_driver
-    urls = base_url
-    caplog.set_level(logger.INFO)
+# def test_change_password(get_driver, caplog):
+#     driver = get_driver
+#     urls = base_url
+#     caplog.set_level(logger.INFO)

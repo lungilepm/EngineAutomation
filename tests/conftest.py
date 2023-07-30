@@ -1,5 +1,5 @@
 from helpers.auth.TokenController import TokenController
-from helpers.genericui.LoginPage import LoginPage
+
 import pytest
 from helpers.auth.RolesController import RolesController
 from helpers.auth.UserController import UserController
@@ -8,7 +8,15 @@ from utilities.genericUtilities import *
 from webdriver_manager.chrome import ChromeDriverManager
 
 from selenium import webdriver
+from time import sleep
 
+from selenium import webdriver
+from selenium.webdriver import Keys
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 obj_auth = RolesController()
 obj_roles = UserController()
 obj_roles2 = UserControllerV2()
@@ -132,7 +140,7 @@ def role_agency_id(request, caplog):
 
 @pytest.fixture()
 def get_driver(caplog):
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.implicitly_wait(10)
     driver.maximize_window()
     return driver
